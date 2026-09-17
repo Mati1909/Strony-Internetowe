@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="Zdjecia/Logo.png">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <title>Firewall</title>
+</head>
+<body>
+    <h1>Firewall na Serwerze Windows</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Reguly.html">Reguły</a></li>
+            <!--<li><a href="Polaczenia.html">Połączenia</a></li>-->
+            <li><a href="IPSec.html">IPSec</a></li>
+            <li><a href="Informacje.html">Informacje</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>"Ściana Ognia" i jej prawdziwe oblicze w Informatyce!</h1>
+        <p><b><i>Zapora Sieciowa (ang. Firewall)</i></b> to system, pozwalający na zabezpieczanie komputerów, serwerów i całych sieci przed nieupoważnionym przepływem danych. Pozwala ona określić, które
+            urządzenia lub segmenty sieci są godne zaufania i odpowiednio filtrować dostęp do nich.</p>
+        <img src="Zdjecia/Firewall_Definicja.jpg" alt="" style="width: 800px; margin-left: 25%;">
+        <p>Może być ona zlokalizowana w bramie sieciowej, na serwerze, komputerze, a nawet routerze w sieci lokalnej.<br>
+        Zapory, które zlokalizowane są w bramie sieciowej mogą być rozwiązaniami sprzętowymi, programowymi lub hybrydowymi. Jakie pełnią funkcje?
+        <ul>
+            <li>Kontrolują i zarządzają ruchem w sieci przez kontrolowanie pakietów, monitorowanie połączeń i filtrowanie danych na poziomie aplikacji</li>
+            <li>Analizują połączenia przez kontrolowanie komunikacji między hostami i przechowują zgromadzone w ten sposób informacje w tabeli stanu</li>
+            <li>Są bramą w sieci prywatnej (VPN) -> Poprzez szyfrowanie, uwierzytelnianie w protokole <b>IPSec</b> oraz wykorzystywanie technologii <b>NAT</b>, która pozwala na
+            tłumaczenie adresów publicznych na prywatne w sieci lokalnej</li>
+        </ul></p>
+        <p>Zapory znajdujące się w bramie sieciowej nie zapewnią ochrony zasobów sieci lokalnej przed zagrożeniami z wewnątrz sieci. Dlatego zapory takie instalujemy przede wszystkim na
+            komputerach, serwerach czy właśnie routerach. W ten sposób, ochrona będzie odporna właśnie na zagrożenia z sieci lokalnej. A więcej teorii o zaporze możecie znaleźć <a href="https://pl.wikipedia.org/wiki/Zapora_sieciowa" target="_blank">tutaj.</a></p>
+        <p>W systemach Windows Serwer, zapora ta ma nazwę: "Zapora Windows Defender z zapezpieczeniami zaawansowanymi"... czyli w skrócie po prostu -> <b><i>Zapora Windows Defender.</i></b>
+        Znajdziemy ją zarówno w <u>narzędziach w Menedżerze Serwera oraz w przystawce mmc.</u> Jest ona dla wielu administratorów wystarczająca bez potrzeby instalacji zapory z poza systemu.
+    Umożliwia ona konfigurację zarówno na komputerach lokalnych, jak i też zdalnie, z wykorzystaniem narzędzi <b>Zasad Grupy (GPO).</b> Ustawienia zapory są zintegrowane z protokołem <b>IPSec</b>,
+    co pozwala na <b><u>filtrowanie</u></b> przepływu pakietów na podstawie wyników przeprowadzonych przez niego negocjacji.</p>
+    <h1>Działanie Filtracji</h1>
+    <p>Filtrowanie tutaj polega na sprawdzaniu przesyłanych pakietów za pomocą <a href="Reguly.html">reguł,</a> które ustawiamy w trakcie konfiguracji i podjęciu decyzji, czy dany pakiet ma być wpuszczony do sieci, czy nie,
+    bo może stanowić zagrożenie dla niej. Jak można przedstawić filtrowanie w paru słowach:
+    <ul>
+        <li>Przy filtracji, sprawdzane są informacje w nagłówku TCP/IP pakietu</li>
+        <li>Odbywa się ono sekwencyjnie, czyli od pierwszego do ostatniego</li>
+        <li><b><i>Filtry bezstanowe,</i></b> gdzie filtrowanie odbywa się na podstawie: adresu IP, typu protokołu, portu, źródła i celu pakietu; nie zapamiętuje poprzednich pakietów przez co jest narażony
+            na atak <b><i>spoofing.</i></b></li>
+        <li><b><i>Filtry stanowe,</i></b> które zapamiętują pakiety, umieszczają adres zwrotny, gdzie pakiet oczekuje odpowiedzi</li>
+        <li><b>Zalety:</b> Łatwość konfiguracji, nie powoduje dużego obciążenia</li>
+        <li><b>Wady:</b> Trudności w poprawnym skonfigurowaniu reguły, narażenie się na atak <b><u>spoofing,</u></b> awarie bądź błędy filtrów spowodują brak prawidłowej ochrony.</li>
+        <li>Przedstawiłem tu bardzo ogólne informacje, jednak zachęcam do odwiedzenia <a href="https://zaporysieciowe.wordpress.com/filtrowanie-pakietow/" target="_blank">tej strony,</a> aby się więcej dowiedzieć o filtracji :)</li>
+    </ul></p>
+    </div>
+    <footer>Firewall &copy 2022 Wszelkie Prawa Zastrzeżone</footer>
+</body>
+</html>

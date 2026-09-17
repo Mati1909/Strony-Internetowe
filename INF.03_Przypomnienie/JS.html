@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="Zdjecia/favicon.png" type="image/x-icon">
+    <title>Przygotowanie do egzaminu INF.03 - JS</title>
+    <style>
+        b, h2
+        {
+            color: #E6CF00;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #E6CF00;
+            font-weight: bold;
+        }
+        a:hover
+        {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="baner">
+            <h1>Java Script</h1>
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+            <div id="menu-links">
+                <a href="index.html">Strona Główna</a>
+                <a id="html" href="HTML.html">HTML</a>
+                <a id="css" href="CSS.html">CSS</a>
+                <a id="javaScript" href="JS.html">Java Script</a>
+                <a id="php" href="PHP.html">PHP</a>
+                <a id="sql" href="SQL.html">SQL</a>
+                <a href="Informacje.html">Informacje</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="content">
+            <img src="Zdjecia/JS.avif">
+            <div id="links" class="js">
+                <a href="#umieszczenie">Umieszczenie na stronie</a>
+                <a href="#zmienne">Zmienne i rodzaje danych</a>
+                <a href="#if">Instrukcje warunkowe</a>
+                <a href="#petle">Pętle</a>
+                <a href="#tablice">Tablice</a>
+                <a href="#funkcje_mat_znak">Funkcje matematyczne i znakowe</a></div>
+            <div id="links" class="js">
+                <a href="#pobieranieDanych">Pobieranie danych z elementów</a>
+                <a href="#funkcje">Funkcje użytkownika</a>
+                <a href="#zdarzenia">Zdarzenia</a>
+                <a href="#modyfikacja">Modyfikacja elementów strony przez skrypt</a></div>
+            <p>Java Script jest językiem programowania, zaliczanym do części <b><i>front-end</i></b>, działającym po stronie klienta (przeglądarki), który służy do obsługi chociażby stylów na stronie, obliczaniu pewnych danych itd. Jest on jednym z najłatwiejszych języków do nauczenia się. Obecnie na egzaminie występuje rzadko, ale warto pewne podstawowe informacje znać.</p>
+            <!-- Umieszczenie na stronie -->
+            <div class="chapter" id="umieszczenie">
+                <h2>Umieszczenie na stronie</h2>
+                <p>Podobnie do CSS, skrypty JS możemy umieszczać na dwa sposoby:</p>
+                <ul>
+                    <li><b>Wewnątrz pliku HTML</b> – Skrypt mieści się pomiędzy znacznikami <b>&lt;script&gt; &lt;/script&gt;</b></li>
+                    <li><b>W pliku z rozszerzeniem .js</b> – Skrypt znajduje się w oddzielnym pliku, który podłączony do strony jest poprzez <b>&lt;script src="skrypt.js"&gt; &lt;/script&gt;</b></li>
+                </ul>
+                <p>Zaleca się, aby skrypty umieszczane były przed znacznikiem <b>&lt;/body&gt;</b>, czyli pod koniec strony sekcji <b><i>body</i></b></p>
+                <img src="Zdjecia/JS/Umieszczenie.png" alt="">
+            </div>
+            <!-- Zmienne -->
+            <div class="chapter" id="zmienne">
+                <h2>Zmienne i rodzaje danych</h2>
+                <p>W celu deklaracji zmiennych, używamy albo słowa <b><i>var</i></b>, albo słowa <b><i>let</i></b>. Co prawda, <b><i>var</i></b> jest starszym formatem, ale najprościej to właśnie jego używać, szczególnie na egzaminie. Jeśli chodzi o nazywanie zmiennych, to warto pamiętać, aby:</p>
+                <ul>
+                    <li>Nie zaczynać od cyfry, czy znaków specjalnych (poza _)</li>
+                    <li>Nazywać je najlepiej tak, aby odzwierciedlały wartości, które w sobie zapisują</li>
+                    <li>Wyrazy oddzielać znakiem podłogi (_), bądź wielkimi literami</li>
+                </ul>
+                <p>Co prawda, w JS nie ustalamy z góry, jakie dane będzie przechowywać konkretna zmienna (jak np. w C++, czy C#), natomiast musimy brać pod uwagę, że są pewne typy danych, możliwych do zapisania:</p>
+                <ul>
+                    <li><b>string</b> – Typ tekstowy. Zapisywany między " " lub ' '</li>
+                    <li><b>int</b> – Typ liczbowy całkowity</li>
+                    <li><b>float</b> – Typ liczbowy rzeczywisty (liczby zmiennoprzecinkowe)</li>
+                    <li><b>char</b> – Typ pojedynczego znaku, zapisywany pomiędzy apostrofami <b>' '</b></li>
+                    <li><b>bool</b> – Typ logiczny. Przechowuje wartości <b><i>true</i></b> albo <b><i>false</i></b></li>
+                </ul>
+                <p>Wszelkiego rodzaju liczby <u>piszemy bez używania jakichkolwiek apostrofów</u>, lecz warto pamiętać, aby <u>części ułamkowe oddzielać od części całkowitych kropką</u>, a nie przecinkiem, jak to w matematyce.</p>
+                <img src="Zdjecia/JS/Zmienne.png" alt="">
+            </div>
+            <!-- Instrukcje warunkowe -->
+            <div class="chapter" id="if">
+                <h2>Instrukcje warunkowe</h2>
+                <p><b><u>DO OBU JĘZYKÓW.</u></b> Instrukcje te pozwalają na wykonywanie konkretnych działań w wyników pewnych wyrażeń logicznych. <b>ZAWSZE</b> instrukcja wykonywana będzie w przypadku <b>true</b> albo w przypadku <b>false</b>. Instrukcje warunkowe posiadają dwa rodzaje:</p>
+                <ul>
+                    <li><b>if/else</b> – Podstawowa instrukcja warunkowa, która ma działania w przypadku <b><i>true</i></b> i <b><i>false</i></b>. Rozszerzeniem tej instrukcji może być <b>else if</b>, czyli sprawdzenie kolejnego wyrażenia logicznego, gdy ten w if'ie się nie spełni. </li>
+                    <li><b>switch</b> – Instrukcja warunkowa, która dotyczy <b><u>konkretnej zmiennej</u></b>. Używana wtedy, gdy potrzeba jest sprawdzenia wielu wartości danej zmiennej (ponad dwóch). Trzeba pamiętać, że każdy przypadek (case) musi mieć na końcu słowo kluczowe <b><i>break</i></b>, gdyż jeżeli tego nie będzie -> instrukcja dalej będzie analizować kolejne wartości: czego nie chcemy. Natomiast słowo <b><i>default</i></b> jest takim odpowiednikiem <b><i>else</i></b>, czyli przypadku, gdzie żadna wartość nie pasuje do wyrażenia logicznego.</li>
+                </ul>
+                <img src="Zdjecia/JS/Instrukcje_Warunkowe.png" alt="">
+            </div>
+            <!-- Pętle -->
+            <div class="chapter" id="petle">
+                <h2>Pętle</h2>
+                <p><b><u>DO OBU JĘZYKÓW.</u></b> Pętle są kawałkiem kodu, który ma za zadanie wykonywać się w określonej liczbie powtórzeń. Z pętlami zatem można kojarzyć <a href="#tablice">tablice</a>. Wyróżniamy 3 główne rodzaje pętli:</p>
+                <ul>
+                    <li><b>for</b> – Pętla ta wykonuje się określoną z góry liczbę razy, w zależności od ustalonej tam zmiennej, a ta zmienna zmienia swoją wartość także zależnie od potrzeby, czyli może <b>inkrementować</b> (+1 w górę), <b>dekrementować</b> (-1 w dół), czy zmieniać swoją wartość określoną przez programistę razy. </li>
+                    <li><b>while</b> i <b>do…while</b> – Pętla, która wykonuje się, dopóki wartość logiczna pomiędzy nawiasami jest <b>true</b>. Przy tej pętli należy uważać, ile razy się wykona, ze względu na to, że o ile pętla do…while wykona się zawsze raz, to pętla while może się wcale nie wykonać, albo wykonywać się będzie w nieskończoność. </li>
+                    <li><b>foreach</b> – Pętla specyficzna dla elementów list/tablic. Zazwyczaj używana do operacji na wartościach zapisanych w tychże tablicach/listach. </li>
+                </ul>
+                <img src="Zdjecia/JS/Petle.png" alt="">
+            </div>
+            <!-- Tablice -->
+            <div class="chapter" id="tablice">
+                <h2>Tablice</h2>
+                <p><b><u>DO OBU JĘZYKÓW.</u></b> Tablice są pewnymi specyficznymi miejscami w pamięci RAM komputera, ilościowo określanymi z góry lub automatycznie w zależności od potrzeb. Tablice mogą być <b>jednowymiarowe</b> lub <b>dwuwymiarowe</b> (jak np. tabela). Zwykle używamy tablic <b>jednowymiarowych</b>, szczególnie na egzaminie.</p>
+                <p>Indeksowane są poprzez liczby poczynając od 0, albo poprzez nazwy tekstowe -> wtedy mamy do czynienia z <b>tablicami asocjacyjnymi</b>. Spotkać je możemy tutaj TYLKO W <a href="PHP.html">PHP</a></p>
+                <img src="Zdjecia/JS/Tablice.png" alt="">
+            </div>
+            <!-- Funkcje matematyczne i znakowe -->
+            <div class="chapter" id="funkcje_mat_znak">
+                <h2>Funkcje matematyczne i znakowe</h2>
+                <p>Czasami pobranie danych nie wystarczy, gdyż trzeba coś obliczyć, połączyć itp. Do tego mamy wiele ciekawych i przydatnych funkcji. Zaczniemy od tych matematycznych, do których należy obiekt <b><i>Math</i></b>, a jego najważniejszymi dla nas funkcjami będą:</p>
+                <ul>
+                    <li><b>abs()</b> – Zwraca wartość absolutną liczby, czyli większą od 0</li>
+                    <li><b>ceil()</b> – Zaokrągla liczbę do góry</li>
+                    <li><b>floor()</b> – Zaokrągla liczbę do dołu</li>
+                    <li><b>max()</b> – Zwraca wartość maksymalną z podanych liczb</li>
+                    <li><b>min()</b> – Zwraca wartość minimalną z podanych liczb</li>
+                    <li><b>pow()</b> – Zwraca potęgę z podstawy liczby pierwszego argumentu i potęgi z liczby drugiego argumentu</li>
+                    <li><b>random()</b> – Zwraca losową liczbę z przedziału od 0 do 1</li>
+                    <li><b>round()</b> – Zaokrągla liczbę zgodnie z matematycznymi zasadami</li>
+                    <li><b>sqrt()</b> – Zwraca pierwiastek z podanej liczby w argumencie funkcji</li>
+                </ul>
+                <p>Co w przypadku funkcji tekstowych?</p>
+                <ul>
+                    <li>W przeciwieństwie do liczbowych, nie ma specjalnego obiektu, gdyż konkretna funkcja odnosi się np. do zmiennej przechowującej ciąg znaków</li>
+                    <li><b>length</b> – Zwraca długość danego tekstu</li>
+                    <li><b>slice()</b> – Wycina konkretną ilość znaków z tekstu. Numeracja zaczyna się od 0</li>
+                    <li><b>substring()</b> – Działanie podobne do slice</li>
+                    <li><b>substr()</b> – Podobnie zwraca pewną ilość znaków z tekstu, lecz drugi argument wyznacza w przeciwieństwie do slice ilość potrzebnych znaków, a nie kolejne znaki w całym tekście</li>
+                    <li><b>replace()</b> – Zamienia jeden tekst na inny, ale tylko jego pierwsze wystąpienie</li>
+                    <li><b>toUpperCase()</b> – Zwraca ciąg znaków, gdzie każdy znak zapisany jest wielką literą</li>
+                    <li><b>toLowerCase()</b> – Zwraca ciąg znaków, gdzie każdy znak zapisany jest małą literą</li>
+                    <li><b>concat()</b> – Łączy ze sobą ciągi znaków. Może być używany tak, jak poprzez <b><i>+</i></b></li>
+                    <li><b>trim()</b> – Usuwa niepotrzebne spacje z ciągu znaków, zwykle dotyczy to spacji na początku i końcu wyrażenia</li>
+                    <li><b>toString()</b> – Zwykle używany przy liczbach, zamienia typ liczbowy na typ znakowy. <b><u>UWAGA, DOMYŚLNIE WARTOŚCI POBIERANE SĄ TYPEM ZNAKOWYM.</u></b></li>
+                    <li><b>split()</b> – Zamienia ciąg znaków na tablicę. W argumencie należy wskazać, co jest separatorem pomiędzy danymi wyrażeniami. </li>
+                </ul>
+                <p>Przy tekście, warto pamiętać, iż <b><u>KAŻDY TEKST JEST TEŻ TABLICĄ</u></b>, stąd można dzięki temu np. zmienić litery w co drugim znaku na duże. Warto o tym pamiętać.</p>
+                <img src="Zdjecia/JS/Funkcje_Mat_Znak.png" alt="">
+            </div>
+            <!-- Elementy byId -->
+            <div class="chapter" id="pobieranieDanych">
+                <h2>Pobieranie danych z elementów</h2>
+                <p>W JS, aby zdobyć dane, należy „podłączyć” konkretny element z HTML'a poprzez pewną funkcję. Służy do tego tzw. <b><i>document.getElement…</i></b>, gdzie dany element możemy pobierać poprzez:</p>
+                <ul>
+                    <li><b>ID</b> (byId) – Identyfikator danego elementu</li>
+                    <li><b>Klasę</b> (byClassName) – Klasa danego elementu</li>
+                    <li><b>Nazwę elementu</b> (byName)</li>
+                    <li><b>Konkretny znacznik</b> (byTagName)</li>
+                </ul>
+                <p>Jako argument tej funkcji, należy użyć nazwę pomiędzy cudzysłowami " "</p>
+                <img src="Zdjecia/JS/Pobieranie_Danych.png" alt="">
+            </div>
+            <!-- Funkcje -->
+            <div class="chapter" id="funkcje">
+                <h2>Funkcje użytkownika</h2>
+                <p>Funkcje są pewnym kawałkiem kodu, który ma za zadanie uruchamiać się w konkretnym zależnym momencie. Będziemy tu mówić ogólnie o funkcjach, bo zagłębiając się można dostrzec różnice, gdzie funkcja zwraca wartość, a metoda/procedura nie zwraca wartości. I to właśnie te metody zwykle będziemy używać w pisaniu skryptów szczególnie na egzaminie.</p>
+                <p>Mogą być one wbudowane (jak wymienione <a href="#funkcje_mat_znak">wyżej</a> na przykład), bądź stworzone przez użytkownika</p>
+                <img src="Zdjecia/JS/Funkcje.png" alt="">
+            </div>
+            <!-- Zdarzenia -->
+            <div class="chapter" id="zdarzenia">
+                <h2>Zdarzenia</h2>
+                <p>Zdarzenia <b><i>on..</i></b> są zdarzeniami, które wykonują się w konkretnym momencie. Najczęściej będziemy mieć do czynienia z zdarzeniem <b><i>onclick</i></b>, który wykonuje się, po naciśnięciu danego elementu. Po więcej takich elementów mamy zarówno tabelkę obiektów DOM na końcu arkusza w egzaminach, jak i też pod <a href="https://www.w3schools.com/js/js_htmldom_events.asp" target="_blank">tym adresem.</a></p>
+                <img src="Zdjecia/JS/Zdarzenia.png" alt="">
+            </div>
+            <!-- Modyfikacja elementów strony przez skrypt -->
+            <div class="chapter" id="modyfikacja">
+                <h2>Modyfikacja elementów strony przez skrypt</h2>
+                <p>Warto zauważyć, że kiedy już złapiemy dany element, to chcemy zmienić zawartość, styl, odnieść się do wartości itp. Jest parę takich słów kluczowych, które pozwalają na zdobycie interesujących nas danych:</p>
+                <ul>
+                    <li><b>value</b> – Pobiera wartość danego elementu</li>
+                    <li><b>src</b> – Pobiera źródło danego elementu (do pliku np. w zdjęciach)</li>
+                    <li><b>innerHTML</b> – Modyfikuje zawartość w HTML'u</li>
+                    <li><b>style</b> – Umożliwia modyfikację pewnych elementów stylu danego elementu na stronie</li>
+                    <li><b>document.write()</b> – Wyświetla <b><u>TYLKO</u></b> dane zawarte pomiędzy nawiasami.</li>
+                </ul>
+                <img src="Zdjecia/JS/Modyfikacja.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="stopka">
+            <h5>Przygotowanie do egzaminu INF.03 &copy; 2023</h5>
+        </div>
+    </footer>
+    <a href="#" class="gotop">&roarr;</a>
+</body>
+</html>

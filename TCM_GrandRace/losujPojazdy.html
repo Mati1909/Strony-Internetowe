@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="Zdjecia/favicon.png">
+    <title>Losuj pojazdy</title>
+</head>
+<body>
+    <header>
+        <div id="baner1">
+            <a href="index.html"><img src="Zdjecia/Logo.png" alt="Logo"></a>
+        </div>
+        <div id="baner2">
+            <ul>
+                <li>
+                    <a href="statystyki.php">Statystyki</a>
+                </li>
+                <li>
+                <a href="">Grand Race</a>
+                    <ul class="dropdown">
+                    <li><a href="losujPojazdy.html">Losuj pojazdy</a></li>
+                    <li><a href="podium.html">Dodaj wynik na podium</a></li>
+                    <li><a href="wynikiGrandRace.php">Pokaż wyniki</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Summit</a>
+                        <ul class="dropdown">
+                        <li><a href="wynikiSummit.php">Pokaż wyniki</a></li>
+                        <li><a href="dodajWynikSummit.html">Dodaj wynik summit</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="content">
+            <h1>Losuj pojazdy na Grand Race</h1>
+            <form action="losujPojazdy.php" method="post">
+                <h3>Wybierz klasę 1 pojazdu</h3>
+                <select name="klasa1">
+                    <option value="Street Tier 1">Street Tier 1</option>
+                    <option value="Street Tier 2">Street Tier 2</option>
+                    <option value="Hypercar">Hypercar</option>
+                    <option value="Drift">Drift</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Rally">Rally</option>
+                    <option value="Rally Raid">Rally Raid</option>
+                    <option value="Motorcross">Motorcross</option>
+                    <option value="Alpha GP">Alpha GP</option>
+                    <option value="Monster">Monster</option>
+                </select>
+                <h3>Wybierz klasę 2 pojazdu</h3>
+                <select name="klasa2">
+                    <option value="Street Tier 1">Street Tier 1</option>
+                    <option value="Street Tier 2">Street Tier 2</option>
+                    <option value="Hypercar">Hypercar</option>
+                    <option value="Drift">Drift</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Rally">Rally</option>
+                    <option value="Rally Raid">Rally Raid</option>
+                    <option value="Motorcross">Motorcross</option>
+                    <option value="Alpha GP">Alpha GP</option>
+                    <option value="Monster">Monster</option>
+                </select>
+                <h3>Wybierz klasę 3 pojazdu</h3>
+                <select name="klasa3">
+                    <option value="Street Tier 1">Street Tier 1</option>
+                    <option value="Street Tier 2">Street Tier 2</option>
+                    <option value="Hypercar">Hypercar</option>
+                    <option value="Drift">Drift</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Rally">Rally</option>
+                    <option value="Rally Raid">Rally Raid</option>
+                    <option value="Motorcross">Motorcross</option>
+                    <option value="Alpha GP">Alpha GP</option>
+                    <option value="Monster">Monster</option>
+                </select>
+                <h2>Dodatkowe Opcje</h2>
+                <h3>Jakość pojazdów</h3>
+                <select name="jakosc">
+                    <option value="">Bez znaczenia</option>
+                    <option value="Dobra">Dobra</option>
+                    <option value="Super">Super</option>
+                    <option value="Meta">Meta</option>
+                </select>
+                <h3>Wskaż konkretną markę</h3>
+                <select name="marka">
+                    <option value="" selected>Marka</option>
+                    <option value="Hoonigan">Hoonigan</option>
+                    <optgroup label="Austria">
+                        <option value="KTM">KTM</option>
+                    </optgroup>
+                    <optgroup label="Francja">
+                        <option value="Bugatti">Bugatti</option>
+                        <option value="IVORY-TOWER">IVORY-TOWER</option>
+                        <option value="Renault">Renault</option>
+                        <option value="Citroën">Citroën</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Proto">Proto</option>
+                        <option value="Creators">Creators</option>
+                    </optgroup>
+                    <optgroup label="Holandia">
+                        <option value="Spyker">Spyker</option>
+                    </optgroup>
+                    <optgroup label="Japonia">
+                        <option value="Forsberg Racing">Forsberg Racing</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Infiniti">Infiniti</option>
+                        <option value="Kawasaki">Kawasaki</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Mitsubishi">Mitsubishi</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Suzuki">Suzuki</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Yamaha">Yamaha</option>
+                        <option value="KRC Japan">KRC Japan</option>
+                    </optgroup>
+                    <optgroup label="Niemcy">
+                        <option value="Audi">Audi</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Mercedes-AMG">Mercedes-AMG</option>
+                        <option value="Mercedes-Benz">Mercedes-Benz</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="BMW Motorrad">BMW Motorrad</option>
+                        <option value="RUF">RUF</option>
+                    </optgroup>
+                    <optgroup label="Rosja">
+                        <option value="Creators">Creators</option>
+                    </optgroup>
+                    <optgroup label="Szwecja">
+                        <option value="Koenigsegg">Koenigsegg</option>
+                    </optgroup>
+                    <optgroup label="USA">
+                        <option value="Acura">Acura</option>
+                        <option value="Cadillac">Cadillac</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Chrysler">Chrysler</option>
+                        <option value="DeLorean">DeLorean</option>
+                        <option value="Dodge">Dodge</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Hummer">Hummer</option>
+                        <option value="Jeep®">Jeep®</option>
+                        <option value="Plymouth">Plymouth</option>
+                        <option value="Pontiac">Pontiac</option>
+                        <option value="PROTO">PROTO</option>
+                        <option value="Saleen">Saleen</option>
+                        <option value="Shelby">Shelby</option>
+                        <option value="Harley Davidson">Harley Davidson</option>
+                        <option value="Indian Motorcycle">Indian Motorcycle</option>
+                        <option value="Creators">Creators</option>
+                        <option value="GMC">GMC</option>
+                        <option value="Ram">Ram</option>
+                        <option value="Buick">Buick</option>
+                        <option value="RingBrothers">RingBrothers</option>
+                    </optgroup>
+                    <optgroup label="Wielka Brytania">
+                        <option value="Ariel">Ariel</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Bentley">Bentley</option>
+                        <option value="Jaguar">Jaguar</option>
+                        <option value="Lotus">Lotus</option>
+                        <option value="Mini">Mini</option>
+                        <option value="TVR">TVR</option>
+                        <option value="Creators">Creators</option>
+                        <option value="McLaren">McLaren</option>
+                        <option value="Land Rover">Land Rover</option>
+                        <option value="Red Bull">Red Bull</option>
+                        <option value="Liberty Walk">Liberty Walk</option>
+                    </optgroup>
+                    <optgroup label="Włochy">
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Lamborghini">Lamborghini</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Ducati">Ducati</option>
+                        <option value="Creators">Creators</option>
+                        <option value="Pagani">Pagani</option>
+                        <option value="Abarth">Abarth</option>
+                        <option value="Alfa Romeo">Alfa Romeo</option>
+                        <option value="Lancia">Lancia</option>
+                    </optgroup>
+                    <optgroup label="Dania">
+                        <option value="Zenvo">Zenvo</option>
+                    </optgroup>
+                    <optgroup label="ZEA">
+                        <option value="W Motors">W Motors</option>
+                    </optgroup>
+                </select>
+                <h3>Dekada</h3>
+                 <label><input type="radio" name="Dekada" value="" checked> Dowolna</label>
+                 <label><input type="radio" name="Dekada" value="50s"> Lata 50s</label>
+                 <label><input type="radio" name="Dekada" value="60s"> Lata 60s</label>
+                 <label><input type="radio" name="Dekada" value="70s"> Lata 70s</label>
+                 <label><input type="radio" name="Dekada" value="80s"> Lata 80s</label>
+                 <label><input type="radio" name="Dekada" value="90s"> Lata 90s</label> <br>
+                 <label><input type="radio" name="Dekada" value="2000s"> Lata 2000s</label>
+                 <label><input type="radio" name="Dekada" value="2010s"> Lata 2010s</label>
+                 <label><input type="radio" name="Dekada" value="2020s"> Lata 2020s</label>
+                 <h3>Kraj</h3>
+                 <label><input type="checkbox" name="Kraj" value="" checked> Dowolny</label>
+                 <label><input type="checkbox" name="Kraj_Austria" value="Austria"> Austria</label>
+                 <label><input type="checkbox" name="Kraj_Dania" value="Dania"> Dania</label>
+                 <label><input type="checkbox" name="Kraj_Francja" value="Francja"> Francja</label>
+                 <label><input type="checkbox" name="Kraj_Holandia" value="Holandia"> Holandia</label>
+                 <label><input type="checkbox" name="Kraj_Japonia" value="Japonia"> Japonia</label>
+                 <label><input type="checkbox" name="Kraj_Niemcy" value="Niemcy"> Niemcy</label>
+                 <label><input type="checkbox" name="Kraj_Szwecja" value="Szwecja"> Szwecja</label>
+                 <label><input type="checkbox" name="Kraj_USA" value="USA"> USA</label>
+                 <label><input type="checkbox" name="Kraj_Wielka_Brytania" value="Wielka Brytania"> Wielka Brytania</label>
+                 <label><input type="checkbox" name="Kraj_Wlochy" value="Włochy"> Włochy</label>
+                 <label><input type="checkbox" name="Kraj_ZEA" value="ZEA"> ZEA</label>
+                 <label><input type="checkbox" name="Kraj_Rosja" value="Rosja"> Rosja</label>
+                 <h3>Kolor</h3>
+                 <select name="Kolor">
+                    <option value="">Kolor</option>
+                    <option value="Czerwony">Czerwony</option>
+                    <option value="Niebieski">Niebieski</option>
+                    <option value="Zielony">Zielony</option>
+                    <option value="Pomarańczowy">Pomarańczowy</option>
+                    <option value="Błękitny">Błękitny</option>
+                    <option value="Żółty">Żółty</option>
+                    <option value="Srebrny">Srebrny</option>
+                    <option value="Czarny">Czarny</option>
+                    <option value="Fioletowy">Fioletowy</option>
+                    <option value="Biały">Biały</option>
+                    <option value="Różowy">Różowy</option>
+                    <option value="Granatowy">Granatowy</option>
+                 </select> 
+                 <h3>Czy Motocykl?</h3>
+                 <select name="czyMotocykl">
+                    <option value="Nie">Nie</option>
+                    <option value="Tak">Tak</option>
+                 </select><br>
+                 <input type="submit" value="Losuj">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div id="stopka">
+            <p>The Crew Motorfest Hub &copy 2023 - 2025. Projekt autorski nie do publikacji w Internecie</p>
+        </div>
+    </footer>
+</body>
+</html>

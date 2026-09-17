@@ -1,0 +1,32 @@
+Aktualizacja strony: TCM Grand Race:
+
++ Zmiana kolorów co sezon, ustawienie kolorystyki do zmiennych, aby w jednym miejscu dało się zmieniać
++ Dodanie kraju "Dania", "ZEA" do listy wyboru (Po dodaniu Zenvo)
++ Dodanie opcji wyboru, czy motocykle mają być brane pod uwagę
++ Dodanie do tabeli "pojazdy" kolumny "czyMotocykl" z opcjami "Tak" i "Nie"
+- Wyświetlenie dodatkowych statystyk:
+    - Pojazdy, które nie zajęły 1 miejsca
+    + Liczba podium danego pojazdu
+    + Liczba ogólna zwycięstw
+    + Ilość wygranych w danym miesiącu/roku
++ Statystyki dotyczące Summitów, czyli średnie miejsce w rankingu danego miesiąca
++ Modyfikacja wyświetlania dat z formatu YYYY-MM-DD na DD-MM-YYYY
+
+28.09: Zmiana roku wyszukiwania na 1900 (nie szuka 356 z ST1)
+
+4.02:
+
+- Modyfikacja bazy, w kontekście pojazdów z sezonu 6 oraz modyfikatorów
++ Wyświetlanie samochodów tylko wylosowanych
+
+
+SQL: Zapytania do zrobienia na serwerze:
+
+CREATE VIEW ilosc_podium AS SELECT `pojazdy`.`Marka` AS `Marka`, `pojazdy`.`Model` AS `Model`, `pojazdy`.`Rocznik` AS `Rocznik`, `pojazdy`.`Typ` AS `Typ`, count(`grand_race`.`Pozycja`) AS `Ilość` FROM (`pojazdy` join `grand_race` on(`grand_race`.`Pojazdy_ID` = `pojazdy`.`ID`)) GROUP BY '', '', '' ORDER BY '' DESC;
+CREATE VIEW ilosc_zwyciestw AS SELECT count(`grand_race`.`Pozycja`) AS `Ilość` FROM `grand_race` WHERE `grand_race`.`Pozycja` = 1 ;
+CREATE VIEW summit_srednia_pozycja AS SELECT cast(avg(`summit`.`Miejsce`) as float) AS `Średnie_Miejsce`, month(`summit`.`DataKoniec`) AS `Miesiąc`, year(`summit`.`DataKoniec`) AS `Rok` FROM `summit` GROUP BY '', '' ORDER BY '' ASC, '' ASC ;
+CREATE VIEW wyniki_grand_race AS SELECT date_format(`grand_race`.`Data`,'%d.%m.%Y') AS `Data`, `grand_race`.`Pozycja` AS `Pozycja`, `grand_race`.`Czas` AS `Czas`, `pojazdy`.`Marka` AS `Marka`, `pojazdy`.`Model` AS `Model`, `pojazdy`.`Rocznik` AS `Rocznik`, `pojazdy`.`Kraj` AS `Kraj`, `pojazdy`.`Typ` AS `Typ` FROM (`grand_race` join `pojazdy` on(`pojazdy`.`ID` = `grand_race`.`Pojazdy_ID`)) ORDER BY `grand_race`.`ID` DESC ;
+CREATE VIEW zwyciestwa_miesiac AS SELECT count(`grand_race`.`Pozycja`) AS `Zwycięstwa`, month(`grand_race`.`Data`) AS `Miesiąc` FROM `grand_race` WHERE `grand_race`.`Pozycja` = 1 GROUP BY '' ORDER BY '' DESC ;
+CREATE VIEW zwyciestwa_miesiac_rok AS SELECT count(`grand_race`.`Pozycja`) AS `Zwycięstwa`, month(`grand_race`.`Data`) AS `Miesiąc`, year(`grand_race`.`Data`) AS `Rok` FROM `grand_race` WHERE `grand_race`.`Pozycja` = 1 GROUP BY '', '' ORDER BY '' DESC ;
+CREATE VIEW zwyciestwa_pojazdy_grand_race AS SELECT `pojazdy`.`Marka` AS `Marka`, `pojazdy`.`Model` AS `Model`, `pojazdy`.`Rocznik` AS `Rocznik`, `pojazdy`.`Kraj` AS `Kraj`, `pojazdy`.`Typ` AS `Typ`, count(`grand_race`.`Pozycja`) AS `Ilosc` FROM (`pojazdy` join `grand_race` on(`grand_race`.`Pojazdy_ID` = `pojazdy`.`ID`)) WHERE `grand_race`.`Pozycja` = 1 GROUP BY `pojazdy`.`Marka`, `pojazdy`.`Model`, `pojazdy`.`Rocznik`, `pojazdy`.`Kraj`, `pojazdy`.`Typ` ORDER BY count(`grand_race`.`Pozycja`) DESC ;
+CREATE VIEW zwyciestwa_rok AS SELECT count(`grand_race`.`Pozycja`) AS `Zwycięstwa`, year(`grand_race`.`Data`) AS `Rok` FROM `grand_race` WHERE `grand_race`.`Pozycja` = 1 GROUP BY '' ORDER BY '' DESC ;

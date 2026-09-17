@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="Zdjecia/favicon.png" type="image/x-icon">
+    <title>Przygotowanie do egzaminu INF.03 - PHP</title>
+    <style>
+        b, h2
+        {
+            color: #BB32FF;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #BB32FF;
+            font-weight: bold;
+        }
+        a:hover
+        {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="baner">
+            <h1>PHP</h1>
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+            <div id="menu-links">
+                <a href="index.html">Strona Główna</a>
+                <a id="html" href="HTML.html">HTML</a>
+                <a id="css" href="CSS.html">CSS</a>
+                <a id="javaScript" href="JS.html">Java Script</a>
+                <a id="php" href="PHP.html">PHP</a>
+                <a id="sql" href="SQL.html">SQL</a>
+                <a href="Informacje.html">Informacje</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="content">
+            <img src="Zdjecia/PHP.jpg">
+            <div id="links" class="php">
+                <a href="#xampp">Obsługa XAMPP</a>
+                <a href="#umieszczenie">Umieszczanie na stronie</a>
+                <a href="#zmienne">Deklaracja zmiennych i rodzaje danych</a>
+                <a href="#if">Instrukcje warunkowe</a>
+                <a href="#petle">Pętle</a>
+                <a href="#tablice">Tablice</a></div>
+            <div id="links" class="php">
+                <a href="#funkcje">Funkcje</a>
+                <a href="#funkcje_mat_znak">Funkcje matematyczne i znakowe</a>
+                <a href="#formularze">Obsługa formularzy</a>
+                <a href="#bazy_danych">Obsługa Baz Danych</a></div>
+            <p>Język PHP jest częścią tzw. <b>back-end'u</b>, czyli działań wykonywanych po stronie serwera. Język pozwala na połączenie <u>części aplikacji z bazami danych</u> poprzez różne potrzebne biblioteki, które są omówione w dalszej części.</p>
+            <!-- Obsługa XAMPP -->
+            <div class="chapter" id="xampp">
+                <h2>Obsługa XAMPP</h2>
+                <p><a href="https://www.apachefriends.org/pl/index.html" target="_blank">Pakiet XAMPP</a> jest odpowiedzią na to, jak sprawić, aby nasz komputer stał się tzw. serwerem do hostowania strony. W tym pakiecie, zawarte są dwa ważne składniki: <b>Apache</b> i <b>MySQL</b>. Poza nimi, jest wiele innych, ale do tworzenia aplikacji wystarczą nam te dwa moduły.</p>
+                <p>Aby dostać się do panelu kontrolnego, należy po uruchomieniu usługi <b>Apache</b> i <b>MySQL</b>, w przeglądarce wejść na adres tzw. pętli zwrotnej, czyli <b><i>127.0.0.1</i></b> albo <b><i>localhost</i></b>, który odwołuje się do lokalnego komputera.</p>
+                <img src="Zdjecia/PHP/XAMPP.png" alt="">
+            </div>
+            <!-- Umieszczanie na stronie -->
+            <div class="chapter" id="umieszczenie">
+                <h2>Umieszczanie na stronie</h2>
+                <p>W przeciwieństwie do JS, język PHP <b><u>nie może być umieszczany w oddzielnym pliku w całości</u></b>. Owszem, niektóre pliki np. dotyczące połączenia z bazą mogą być podłączone, lecz chodzi mi tutaj o większe skrypty.</p>
+                <p>Kiedy strona używa języka PHP, plik ze stroną musi mieć rozszerzenie <b><i>.php</i></b>, ponadto aby język był dobrze interpretowany (czyli przez serwer) -> <b>należy stronę uruchamiać właśnie przez serwer</b>, czyli w przypadku XAMPP'a, pliki ze stroną muszą być umieszczone w folderze <b><i>htdocs</i></b> w miejscu instalacji programu XAMPP.</p>
+                <p>Skrypty najlepiej <u>umieszczać przed zamknięciem znacznika <b><i>body</i></b>.</u> Natomiast w przypadku implementacji ciasteczek (cookie), należy część tego skryptu umieścić <u>przed znacznikiem html</u>. Skrypt w php umieszczamy między znacznikami <b><i>&lt;?php i ?&gt;</i></b>. Nie ma określonej ilości takich znaczników, więc można pod koniec strony umieścić jeden długi skrypt, zaś w odpowiednich miejscach na stronie wywoływać poszczególne funkcje.</p>
+                <p>Każda linia skryptu musi kończyć się średnikiem <b><i>;</i></b> lub w przypadku instrukcji warunkowych, pętli, funkcji: nawiasem klamrowym <b><i>{ }</i></b></p>
+                <img src="Zdjecia/PHP/Umieszczenie.png" alt="">
+            </div>
+            <!-- Deklaracja zmiennych i rodzaje danych -->
+            <div class="chapter" id="zmienne">
+                <h2>Deklaracja zmiennych i rodzaje danych</h2>
+                <p>W PHP, zmienne deklaruje się poprzez jeden znak: <b><i>$</i></b>. Jeśli chodzi o nazywanie, sytuacja podobna do tego, co było napisane w <a href="JS.html#zmienne">JS</a>.</p>
+                <p>W kwestii rodzajów danych, analogicznie, jak w <a href="JS.html#zmienne">JS</a></p>
+                <img src="Zdjecia/PHP/Zmienne.png" alt="">
+            </div>
+            <!-- Instrukcje warunkowe -->
+            <div class="chapter" id="if">
+                <h2>Instrukcje warunkowe</h2>
+                <p>Teoretyczna część znajduje się w części <a href="JS.html#if">JS w sekcji Instrukcji warunkowych</a>. Poniżej zaś, jak zapisuje się to w PHP</p>
+                <img src="Zdjecia/PHP/Instrukcje_Warunkowe.png" alt="">
+            </div>
+            <!-- Pętle -->
+            <div class="chapter" id="petle">
+                <h2>Pętle</h2>
+                <p>Teoretyczna część znajduje się w części <a href="JS.html#petle">JS w sekcji Pętle</a>. Poniżej zaś, jak zapisuje się to w PHP</p>
+                <img src="Zdjecia/PHP/Petle.png" alt="">
+            </div>
+            <!-- Tablice -->
+            <div class="chapter" id="tablice">
+                <h2>Tablice</h2>
+                <p>Teoretyczna część znajduje się w części <a href="JS.html#tablice">JS w sekcji Tablic</a>. Poniżej zaś, jak zapisuje się to w PHP</p>
+                <p>Jeśli chodzi o tablice, podobnie jak w JS z tą różnicą, że posiadają one tablice asocjacyjne. O więcej informacji, warto przeczytać <a href="https://www.w3schools.com/php/php_arrays_associative.asp" target="_blank">tutaj.</a></p>
+                <img src="Zdjecia/PHP/Tablice.png" alt="">
+            </div>
+            <!-- Funkcje -->
+            <div class="chapter" id="funkcje">
+                <h2>Funkcje</h2>
+                <p>Teoretyczna część znajduje się w części <a href="JS.html#funkcje">JS w sekcji Funkcji</a>. Poniżej zaś, jak zapisuje się to w PHP</p>
+                <img src="Zdjecia/PHP/Funkcje.png" alt="">
+            </div>
+            <!-- Funkcje matematyczne i znakowe -->
+            <div class="chapter" id="funkcje_mat_znak">
+                <h2>Funkcje matematyczne i znakowe</h2>
+                <p>Funkcje znakowe:</p>
+                <ul>
+                    <li><b>strlen()</b> – Zwraca długość liczby znaków w wskazanym ciągu znaków</li>
+                    <li><b>str_word_count()</b> – Zwraca ilość wyrazów w wskazanym ciągu znaków</li>
+                    <li><b>strtoupper()</b> – Zwraca ciąg znaków w postaci dużych liter</li>
+                    <li><b>strtolower()</b> – Zwraca ciąg znaków w postaci małych liter</li>
+                    <li><b>str_replace()</b> – Umożliwia zamianę jednego ciągu znaków na drugi, a w trzecim argumencie podany jest ciąg, w którym ma nastąpić zmiana</li>
+                    <li><b>strrev()</b> – Odwraca podany ciąg znaków</li>
+                    <li><b>trim()</b> – Zwraca podany ciąg znaków bez tzw. białych spacji (na początku i końcu ciągu znaków)</li>
+                    <li><b>explode()</b> – Przemienia podany ciąg znaków na tablicę</li>
+                    <li><b>substr()</b> – Zwraca konkretną liczbę znaków z podanego ciągu znaków</li>
+                </ul>
+                <p>Funkcje matematyczne</p>
+                <ul>
+                    <li><b>min()</b> – Zwraca minimalną wartość z podanych liczb</li>
+                    <li><b>max()</b> – Zwraca maksymalną wartość z podanych liczb</li>
+                    <li><b>abs()</b> – Zwraca wartość absolutną podanej liczby</li>
+                    <li><b>sqrt()</b> – Zwraca pierwiastek kwadratowy danej liczby</li>
+                    <li><b>round()</b> – Zaokrągla podaną liczbę do liczby całkowitej</li>
+                    <li><b>rand()</b> – Generuje losową liczbę z przedziału</li>
+                </ul>
+                <img src="Zdjecia/PHP/Funkcje_mat_znak.png" alt="">
+            </div>
+            <!-- Obsługa formularzy -->
+            <div class="chapter" id="formularze">
+                <h2>Obsługa formularzy</h2>
+                <p>Język ten <u>służy zazwyczaj do obsługi danych z formularza</u>. W tym celu, używamy specjalnej tablicy super globalnej <b>$_POST</b> lub <b>$_GET</b>, w zależności od metody przesyłania danych zapisanej w znaczniku <b><i>form</i></b> w atrybucie method w HTML'u. My zwykle używamy metody szyfrowanej, czyli <b>POST</b>.</p>
+                <p>Aby dane zostały prawidłowo odczytane, należy pamiętać, aby:</p>
+                <ul>
+                    <li>Konkretne pole w formularzu miało swoją <b>nazwę</b> (name)</li>
+                    <li><b>Nazwy</b> tej używamy w skrypcie PHP, w tej <b><u>tablicy $_POST</u></b> do odczytu danych</li>
+                    <li>Najlepiej, aby nazywać pola tak, jak w przypadku zmiennych, czyli żeby odzwierciedlały przechowywane w sobie dane</li>
+                </ul>
+                <img src="Zdjecia/PHP/Formularze.png" alt="">
+            </div>
+            <!-- Obsługa Baz Danych -->
+            <div class="chapter" id="bazy_danych">
+                <h2>Obsługa Baz Danych</h2>
+                <p>Jak wspomniałem, język ten umożliwia <u>współpracę z bazą danych</u> poprzez bibliotekę <b><i>mysqli</i></b>. Sposób zapisu jej możemy uzyskać w dwóch wariantach:</p>
+                <ul>
+                    <li><b>Proceduralnie</b>, czyli np. <b><i>mysqli_connect()</i></b> LUB</li>
+                    <li><b>Obiektowo</b>, czyli np. <b><i>new mysqli()</i></b></li>
+                </ul>
+                <p>W przykładach, używać będę <b>zapisu obiektowego</b>, zaś pod <a href="https://www.w3schools.com/php/php_mysql_connect.asp" target="_blank">tym linkiem</a> można rozszerzyć informacje odnośnie całej tej biblioteki.</p>
+                <p>Do połączenia się z bazą użyjemy ww. zapisów, a informacje dotyczące połączenia najlepiej <u>zapisać do zmiennej</u> (np. $connect). Kolejność podawanych danych to: <b><i>Adres serwera</i></b>, <b><i>Użytkownik</i></b>, <b><i>Hasło</i></b>, <b><i>Nazwa bazy</i></b></p>
+                <p>W celu wykonania zapytania, należy posłużyć się słowem <b><i>query(" ")</i></b>, gdzie treść zapytania do bazy wpisujemy pomiędzy apostrofami</p>
+                <p>Zawsze, każde połącznie z bazą musi być zamknięte słowem: <b><i>close()</i></b></p>
+                <p>Jeżeli chcemy wyświetlić dane pobrane zapytaniem, należy użyć <b><i>pętli while</i></b> oraz metody <b><i>fetch_assoc()</i></b>, która cały wynik zapytania odpowiednio poukłada do <b>tablicy asocjacyjnej</b>, gdzie nazwa komórki to nazwa kolumny z bazy. Jest to najwygodniejszy sposób na wyświetlanie danych.</p>
+                <p>Warto wspomnieć o funkcji <b><i>num_rows()</i></b>, która zwraca ilość rekordów z zadanego zapytania. </p>
+                <p>Domyślnie, na egzaminie łączenie z bazą będzie odbywać się poprzez adres <b><i>localhost</i></b>, użytkownika <b><i>root</i></b>, hasła (<b><i>jego braku</i></b>) oraz wskazanej przez arkusz nazwy bazy</p>
+                <p>Przy zapisach obiektowych, warto zauważyć, że wywoływanie odpowiednich funkcji wykonuje się poprzez znak tzw. dzidy <b><i>-></i></b></p>
+                <img src="Zdjecia/PHP/Bazy_Danych.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="stopka">
+            <h5>Przygotowanie do egzaminu INF.03 &copy; 2023</h5>
+        </div>
+    </footer>
+    <a href="#" class="gotop">&roarr;</a>
+</body>
+</html>

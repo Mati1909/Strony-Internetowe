@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="Zdjecia/Logo.png">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <title>Firewall - IPSec</title>
+</head>
+<body>
+    <h1>Firewall na Serwerze Windows</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Reguly.html">Reguły</a></li>
+            <!--<li><a href="Polaczenia.html">Połączenia</a></li>-->
+            <li><a href="IPSec.html">IPSec</a></li>
+            <li><a href="Informacje.html">Informacje</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Protokół IPSec</h1>
+        <p><b><i>IPSec (ang. Internet Protocol Security) </i></b>to zestaw protokołów, pozwalający na zestawienie bezpiecznego szyfrowanego tunelu pomiędzy dwoma urządzeniami sieciowymi
+        za pośrednictwem internetu.<br>
+        Zapewnia on uwierzytelnianie stron biorących udział w zestawieniu tunelu oraz integralność, poufność przesyłania danych i ochronę przed atakami powtórzeniowymi. Ponadto, jest to
+        jeden z głównych elementów sieci <b>VPN.</b></p>
+        <img src="Zdjecia/IPSec_Logo.png" alt="" style="width: 50%; margin-left: 25%;">
+        <h1>Funkcje bezpieczeństwa IPSec:</h1>
+        <ul>
+            <li><b><u>Uwierzytelnianie -</u></b> Obie strony zestawiające połączenie tunelowe muszą zostać uwierzytelnione, co potwierdzi ich tożsamość. Dokonuje się to na podstawie: 
+            Wstępnych Kluczy, Kluczy RSA i Certyfikatów.</li>
+            <li><b><u>Integralność Danych -</u></b> Zapewnia, że dane nie zostały zmienione podczas transmisji. Wykorzystywane są algorytmy: SHA, MD5.</li>
+            <li><b><u>Poufność przesyłania Danych -</u></b> Otrzymywana jest poprzez szyfrowanie danych. Wykorzystuje szyfrowania: DES, 3DES, AES.</li>
+            <li><b><u>Ochrona Odtwarzania -</u></b> Zapewnia otrzymanie danego pakietu <b><u>tylko</u></b> raz. Realizowane jest to poprzez numer sekwencyjny, który otrzymuje kazdy pakiet.<br>
+            Numer sekwencyjny jest losowany i zwiększany o 1 z każdym wysłanym przez dany kanał pakietem i służy do rozpoznawania pakietów o kolejności przestawionej podczas wędrówki po sieci oraz chroni przed atakami powtórzeniowymi.</li>
+        </ul>
+        <h1>Tryby IPSec:</h1>
+        <ul>
+            <li><b><i>Tunelowy -</i></b> Jest domyślnym trybem, gdzie cały pakiet IP jest szyfrowany przez IPSec, gdzie razem z nagłówkiem IP <b><u>dodawany jest nowy nagłówek IP.</u></b>
+            Dzięki temu nie jesteśmy w stanie zauważyć, jak następuje wymiana pakietów i jakie one są (zawartość).</li>
+            <li><b><i>Transportowy -</i></b> Obejmuje szyfrowanie samych danych, zostawiając oryginalny nagłówek IP. Zaś nowy nagłówek jest dodawany <b><u>pomiędzy nagłówkiem IP a nagłówkiem transportowym (L4).</u></b></li>
+        </ul>
+        <h1>Ustawienia IPSec w Firewall'u</h1>
+        <img src="Zdjecia/IPSec.png" alt="" style="margin-left: 38%;">
+        <p>Jak widzimy na powyższym screenie, mamy możliwość ustawienia tego protokołu w Firewall'u. Co możemy zrobić tutaj:
+            <ul>
+                <li>Ustawić Funkcje Bezpieczeństwa IPSec w pierwszej dostępnej opcji.</li>
+                <li>Wykluczyć protokół ICMP, który może rozwiązać większość problemów z połączeniami sieciowymi.</li>
+                <li>Określić, którzy użytkownicy bądź komputery mogą się łączyć z tym komputerem tunelowo.</li>
+            </ul>
+        </p>
+        <p>Jeśli ktoś chce dowiedzieć się więcej o tym protokole, warto wejść na te strony:
+            <ul>
+                <li><a href="https://www.ibm.com/docs/pl/i/7.1?topic=concepts-ip-security-protocols" target="_blank">IBM o IPSec</a></li>
+                <li><a href="https://pl.wikipedia.org/wiki/IPsec" target="_blank">Wikipedia o IPSec</a></li>
+            </ul>
+        </p>
+    </div>
+    <footer>Firewall &copy 2022 Wszelkie Prawa Zastrzeżone</footer>
+</body>
+</html>

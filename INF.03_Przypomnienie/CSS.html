@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="Zdjecia/favicon.png" type="image/x-icon">
+    <title>Przygotowanie do egzaminu INF.03 - CSS</title>
+    <style>
+        b, h2
+        {
+            color: #01ACE6;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #01ACE6;
+            font-weight: bold;
+        }
+        a:hover
+        {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="baner">
+            <h1>CSS</h1>
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+            <div id="menu-links">
+                <a href="index.html">Strona Główna</a>
+                <a id="html" href="HTML.html">HTML</a>
+                <a id="css" href="CSS.html">CSS</a>
+                <a id="javaScript" href="JS.html">Java Script</a>
+                <a id="php" href="PHP.html">PHP</a>
+                <a id="sql" href="SQL.html">SQL</a>
+                <a href="Informacje.html">Informacje</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="content">
+            <img src="Zdjecia/CSS.jpg">
+            <div id="links" class="css">
+                <a href="#umieszczenie">Umieszczenie na stronie</a>
+                <a href="#kolorowanie">Kolorowanie</a>
+                <a href="#wyrownywanie">Wyrównywanie</a>
+                <a href="#czcionki">Czcionki</a>
+                <a href="#overflow">Overflow</a>
+                <a href="#marginesy">Marginesy</a>
+                <a href="#tabele">Tabele</a>
+                <a href="#skalowanie">Skalowanie i jednostki</a>
+            </div>
+            <p>Język CSS to nierozłączna część każdej strony z uwagi na swoje przeznaczenie - upiększanie stron. <br>
+            To dzięki takim stylom, strony internetowe wyglądają tak, jak widzimy w internecie.</p>
+            <!-- Umieszczenie na stronie -->
+            <div class="chapter" id="umieszczenie">
+                <h2>Umieszczenie na stronie</h2>
+                <p>Arkusz stylów CSS jest nierozłącznym elementem każdej strony internetowej. Pozwala on na upiększanie konkretnych elementów na stronie. Jednakże mamy aż 3 rodzaje umiejscowienia na stronie:</p>
+                <ul>
+                    <li><b>Nagłówkowy</b> – Styl napisany dosłownie w znaczniku</li>
+                    <li><b>Wewnętrzny</b> – Styl napisany w sekcji <b><i>head</i></b> w pliku HTML</li>
+                    <li><b>Zewnętrzny</b> – Styl napisany w oddzielnym pliku z rozszerzeniem CSS</li>
+                </ul>
+                <p>Hierarchia stylów to: <b><i>Nagłówkowy</i></b> – <b><i>Wewnętrzny</i></b> – <b><i>Zewnętrzny</i></b></p>
+                <p>Na egzaminie oraz w standardzie, aby ułatwić sobie pracę przy stylowaniu, tworzony jest plik zewnętrzny, który podpinany jest poprzez: <b><i>&lt;link rel="stylesheet" href="nazwapliku"&gt;</i></b>, na stronach, gdzie styl ma obowiązywać. Taka metoda zapobiega chaosu w momencie modyfikacji pewnych elementów stylu. Zazwyczaj plik stylu w sekcji <b><i>*</i></b>, czyli każdego elementu na stronie zawiera tzw. <u>zerowanie wszelkich marginesów zewnętrznych i wewnętrznych, ustala rodzaj czcionki czy jej rozmiar.</u> Natomiast w części <b>body</b>, znajdują się informacje dotyczące np. <u>wymiarów strony, koloru tła, czcionki.</u><br> <b><i>Podpowiedź:</i></b> Gdy na egzaminie w części CSS jest punkt: <b><i>Domyślnie dla całej strony</i></b> -> lepiej używać znacznika <b><i>body</i></b>, niż <b><i>*</i></b>, bo może tam być ustalony kolor strony, a nie chcemy, aby np. jakiś input miał także taki kolor.</p>
+                <img src="Zdjecia/CSS/Umieszczenie.png" alt="">
+            </div>
+            <!-- Kolorowanie -->
+            <div class="chapter" id="kolorowanie">
+                <h2>Kolorowanie</h2>
+                <p>Kolory możemy zapisać w zależności od konkretnego koloru poprzez:</p>
+                <ul>
+                    <li><b>background-color</b>: Kolor tła</li>
+                    <li><b>background-image</b>: Tło wypełnione obrazem albo gradientem</li>
+                    <li><b>color</b>: Kolor czcionki</li>
+                </ul>
+                <p>Jak zatem możemy zapisać kolor:</p>
+                <ul>
+                    <li><b>Tekstowo</b> – Angielskimi nazwami określenie nazwy koloru, np. <b><i>green</i></b></li>
+                    <li><b>Heksalnie</b> – Zapis w formacie szesnastkowym, najczęściej używanym, np. <b><i>#00FF00</i></b> (czasem można w formie skróconej do 3 znaków, np. #0F0)</li>
+                    <li><b>RGB</b> – Kod kolorów w formacie: <span style="color: red;">red</span>, <span style="color: green;">green</span> i <span style="color: blue;">blue</span>. Zapisujemy np. <b><i>rgb(0, 255, 0)</i></b> bądź z uwzględnieniem przezroczystości, wtedy używamy <b><i>rgba(0, 255, 0, 100)</i></b>, gdzie <u>a</u> to kanał alfa</li>
+                    <li><b>HSL</b> – Kod kolorów w formacie <b>hue</b> (barwa), <b>saturation</b> (nasycenie), <b>lightness</b> (jasność). Pierwsza wartość zapisana w przedziale od 0 do 255, dwie kolejne to wartości procentowe od 0% do 100%; przykład: hsl(120, 100%, 50%)</li>
+                </ul>
+                <img src="Zdjecia/CSS/Kolorowanie.png" alt="">
+            </div>
+            <!-- Wyrównywanie -->
+            <div class="chapter" id="wyrownywanie">
+                <h2>Wyrównywanie</h2>
+                <p>Domyślnie, tekst przyrównywany jest do lewej strony, lecz czasem trzeba zmienić to. W zależności od tego, jak chcemy przyrównać, mamy parę atrybutów:</p>
+                <ul>
+                    <li><b>text-align</b> – Wyrównywanie tekstu. Rodzaje wyrównań to: <b>left, center, right</b> oraz <b>justify</b>. Wyrównanie to dotyczy <u>tylko i wyłącznie tekstów</u></li>
+                    <li><b>float</b> – Dotyczy wyrównania głównie <b>bloków sekcji</b> (div). Zazwyczaj używamy przyrównania do <b>lewej</b> (left), aby odpowiednie bloki były przyrównane obok siebie w jednej linii. Natomiast wartość <b>right</b> używamy, kiedy chcemy, aby jeden blok opływał drugi, jak np. obraz opływał zdjęcie</li>
+                    <li><b>position</b> – Dotyczy ogólnie pozycji. Zazwyczaj używany w celu <b><u>wyśrodkowania</u></b> pewnego elementu na stronie w pionie lub poziomie (lub w obu kierunkach). Może być ono <b>absolutne</b> (absolute), czyli niezależne od innych elementów, <b>relatywne</b> (relative) do swojego rodzica. Jest jeszcze wiele innych, ale o nich można przeczytać w <a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank">tym artykule.</a></li>
+                </ul>
+                <img src="Zdjecia/CSS/Pozycjonowanie.png" alt="">
+            </div>
+            <!-- Formatowanie czcionki -->
+            <div class="chapter" id="czcionki">
+                <h2>Czcionki</h2>
+                <p>Często czy to na egzaminie, czy to normalnie tworząc stronę stykamy się z potrzebą formatowania czcionki, zmiany jej wyglądu, grubości, wielkości, itd. Jakie mamy do tego właściwości?</p>
+                <ul>
+                    <li><b>font-family</b> – Ustalenie rodzaju czcionki, np. sans-serif, arial itd.</li>
+                    <li><b>font-size</b> – Wielkość czcionki. Wyrażana w jednostkach absolutnych i responsywnych. Najczęściej w px, % lub em.</li>
+                    <li><b>font-weight</b> – Grubość czcionki. Klasyczna czcionka posiada grubość 400, 700 to już pogrubiona czcionka, zaś wartość <b>bold</b> także pogrubia czcionkę </li>
+                    <li><b>font-style</b> – Styl czcionki. Zwykle używamy wartości <b>italic</b>, czyli pochylenia czcionki.</li>
+                </ul>
+                <img src="Zdjecia/CSS/Czcionki.png" alt="">
+            </div>
+            <!-- Overflow -->
+            <div class="chapter" id="overflow">
+                <h2>Overflow</h2>
+                <p>Właściwość opisuje widoczność danego elementu na stronie. Gdy używamy tego na egzaminie, zwyczajnie chodzi o wartość <b><i>scroll</i></b>, czyli możliwości przewijania zawartości danego bloku w przypadku nie mieszczenia się na stronie.</p>
+            </div>
+            <!-- Marginesy -->
+            <div class="chapter" id="marginesy">
+                <h2>Marginesy</h2>
+                <p>Marginesy służą do ustalania odległości względem danego znacznika, bloku itp. Mamy dwa rodzaje marginesów w CSS:</p>
+                <ul>
+                    <li><b>margin</b> – Margines zewnętrzny. Odnosi się do odległości <b><u>na zewnątrz</u></b> danego bloku.</li>
+                    <li><b>padding</b> – Margines wewnętrzny. Odnosi się do odległości <b><u>wewnątrz</u></b> danego bloku. Zazwyczaj używany, aby tekst był w pewnej odległości od obramowania tego bloku (np. w przyciskach)</li>
+                </ul>
+                <p>Marginesy posiadają 1, 2 lub 4 wartości. <u>Wartości przypisywane są w kolejności według wskazówek zegara</u> (góra, prawo, dół, lewo). Gdy podamy jedną wartość -> każda strona będzie mieć taką samą wartość. W przypadku podania dwóch wartości, pierwsza dotyczy marginesów górnych i dolnych, zaś druga dotyczy marginesów lewych i prawych.</p>
+                <p>Jednostki podobnie, jak w czcionkach albo absolutne (px), albo responsywne (% lub em)</p>
+                <img src="Zdjecia/CSS/Marginesy.png" alt="">
+            </div>
+            <!-- Tabele -->
+            <div class="chapter" id="tabele">
+                <h2>Tabele</h2>
+                <p>Jak wspomniano w HTML'u, tabela domyślnie i jej komórki nie posiadają obramowania, czy komórki są od siebie oddalone. Jeżeli musimy formatować tabele poprzez CSS, warto wspomnieć o dwóch najważniejszych właściwościach:</p>
+                <ul>
+                    <li><b>border</b> – Obramowanie. Posiada trzy istotne wartości: <b><i>wielkość</i></b>, <b><i>rodzaj</i></b> (np. solid, dashed, dotted) oraz <b><i>wielkość/grubość</i></b></li>
+                    <li><b>border-collapse</b> – Zwykle dotyczy komórek tabeli i służy do <b>ujednolicenia obramowania</b> tak, że komórki mają wspólne obramowanie, a nie każda osobno ma swoje obramowanie</li>
+                </ul>
+                <p>Poza obramowaniem, jego stylu warto wspomnieć o <b>border-radius</b>, dotyczy to bardziej przyciskom, lecz skoro mówimy o obramowaniach to trzeba wspomnieć o zaokrągleniu rogów, wyrażanych w jednostkach.</p>
+                <img src="Zdjecia/CSS/Tabele.png" alt="">
+            </div>
+            <!-- Skalowanie i jednostki -->
+            <div class="chapter" id="skalowanie">
+                <h2>Skalowanie i jednostki</h2>
+                <p>Skalowanie jest często częścią formatowania wszelkiego rodzaju bloków, zdjęć, tekstów itd. Co prawda, trochę wspomniane było odnośnie jednostek, lecz tutaj trochę je uporządkujemy. Mamy pewien podział jednostek na:</p>
+                <ul>
+                    <li><b>absolutne</b> – Niezależne od innych elementów, czyli zależne od całej strony. Do takich jednostek zaliczamy: <b><i>mm, px, pt</i></b>. Najczęściej będziemy używać pikseli.</li>
+                    <li><b>responsywne</b> – Zależne od elementu rodzica. Umożliwiają one na <u>dynamiczne rozmiary</u> w zależności od urządzenia. Zaliczymy do nich np. <b>procenty</b> (%), <b>em</b> (względem aktualnego rozmiaru czcionki).</li>
+                </ul>
+                <p>Ponadto oprócz jednostek, mamy też możliwość ustalania wielkości poprzez właściwości <b>width</b> oraz <b>height</b>. Służą one do ustalania wymiarów czy to bloków, czy obrazów, czy innych elementów na stronie.</p>
+                <img src="Zdjecia/CSS/Skalowanie.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="stopka">
+            <h5>Przygotowanie do egzaminu INF.03 &copy; 2023</h5>
+        </div>
+    </footer>
+    <a href="#" class="gotop">&roarr;</a>
+</body>
+</html>

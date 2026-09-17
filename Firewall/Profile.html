@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="Zdjecia/Logo.png">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <title>Firewall - Profile</title>
+</head>
+<body>
+    <h1>Firewall na Serwerze Windows</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Reguly.html">Reguły</a></li>
+            <!--<li><a href="Polaczenia.html">Połączenia</a></li>-->
+            <li><a href="IPSec.html">IPSec</a></li>
+            <li><a href="Informacje.html">Informacje</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Profile w Zaporze Sieciowej</h1>
+        <p>Jak wiemy, profil to zbiór pewnych atrybutów z danymi wartościami (taka moja prosta definicja). Kojarzymy profil z profilem użytkownika, jednak pamiętajmy, że w Firewallu
+            także są profile, gdzie są ustawione zdefiniowane ustawienia zapory.</p>
+        <p>W Zaporze Sieciowej istnieją domyślnie 3 profile:
+            <ol>
+                <li><b>Domeny -</b> Wykorzystywany, gdy komputer jest połączony z domeną <b><i>Active Directory,</i></b> której jest członkiem.</li>
+                <li><b>Prywatny -</b> Wykorzystywany, gdy komputer jest podłączony do prywatnej sieci, chronionej przez bramę lub router</li>
+                <li><b>Publiczny -</b> Wykorzystywany, gdy komputer jest podłączony bezpośrednio do nowej sieci w miejscu publicznym</li>
+            </ol>
+        </p>
+        <img src="Zdjecia/Firewall_Program.png" alt="" style="width: 55%; margin-left: 23%;">
+        <p>Profil Publiczny powinien cechować się zaostrzonymi regułami w celu ochrony danych przed nieupoważnionym dostępem. Profil Prywatny nie musi być aż tak restrykcyjny, jak Publiczny
+            ponieważ zwykle w nim znajdują się komputery sieci lokalnej, a profil może pozwolić na np. współdzielenie plików, zasobów, drukarek, dostępu do urządzeń itd.<br>
+            Profile są przypisywane w kolejności: <b><u>Publiczny, Prywatny, Domeny.</u></b> A jak on jest ustalany?
+            <ul>
+                <li>Jeśli <u>wszystkie interfejsy zostaną przypisane do kontrolera domeny odpowiadającej danemu komputerowi</u> -> <b>Profil Domeny</b></li>
+                <li>Jeśli <u>wszystkie interfejsy zostaną przypisane do kontrolera domeny <b><i>lub są połączone z sieciami zaklasyfikowanymi jako prywatne</i></b></u> -> <b>Profil Prywatny</b></li>
+                <li>W innych przypadkach</u> -> <b>Profil Publiczny</b></li>
+            </ul>
+        </p>
+        <p>Domyślnie, zablokowany jest przesył większości pakietów z wyjątkiem podstawowej komunikacji w sieci.<br>
+        W profilu prywatnym dozwolona jest komunikacja związana z udostępnianiem plików i drukarek, odkrywaniem urządzeń sieciowych i pomocą zdalną. Ponadto używa połączeń wychodzących.</p>
+        <img src="Zdjecia/Wlasciowsci.png" alt="" style="margin-left: 38%;">
+        <p>Powyżej widzimy okno właściwości zapory. Dla każdego z 3 widocznych w zakładkach profili możemy ustawić:
+            <ul>
+                <li><b><i>Stan Zapory -</i></b> Czy ma być włączona, czy wyłączona zapora</li>
+                <li><b><i>Połączenia przychodzące:</i></b>
+                <ul>
+                    <li><b><i>Zablokuj -</i></b> Blokuje połączenia niespełniające wymogów zdefiniowanych w aktywnych regułach zapory</li>
+                    <li><b><i>Zablokuj Wszystkie Połączenia -</i></b> Ignoruje reguły i blokuje wszystkie połączenia przychodzące</li>
+                    <li><b><i>Zezwalaj -</i></b> Zezwala na połączenia przychodzące, niespełniające wymogów zdefiniowanych w aktywnych regułach zapory</li>
+                </ul></li>
+                <li><b><i>Połączenia wychodzące:</i></b>
+                    <ul>
+                        <li><b><i>Zezwalaj -</i></b> Zapora zezwala na nawiązywanie połączeń niespełniających wymogów zdefiniowanych w aktywnych regułach zapory.</li>
+                        <li><b><i>Zablokuj -</i></b> Zapora blokuje połączenia wychodzące, które nie spełniają wymogów zdefiniowanych w aktywnych regułach zapory.</li>
+                    </ul></li>
+            </ul>
+        </p>
+    </div>
+    <footer>Firewall &copy 2022 Wszelkie Prawa Zastrzeżone</footer>
+</body>
+</html>

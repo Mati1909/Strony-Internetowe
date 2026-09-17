@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/*
+#F2E529 - Jasny żółty
+#BFB52A - Średni żółty
+#736E26 - Ciemny żółty
+#F2F2F2 - Biały
+#0D0D0D - Czarny
+
+-- Sezon 8: 5.11 - 7.01.2026
+ee1eba - Fioletowy
+32cbfd - Niebieski
+fcc919 - Żółty
+-- Sezon 8: 7.01.2026 - 4.03.2026
+61bee0 - Błękitny
+030d62 - Granatowy
+cd1620 - Czerwony
+*/
+:root
+{
+    --kolor_glowny: #ee1eba;
+    --kolor_przyciski: #fcc919;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    transition: .3s;
+    scroll-behavior: smooth;
+}
+body
+{
+    min-height: 100vh;
+    background-color: #303030;
+}
+#baner1, #baner2
+{
+    float: left;
+    width: 50%;
+    height: 100px;
+    background-color: var(--kolor_glowny);
+}
+#baner1 img
+{
+    position: relative;
+    width: 20%;
+    left: 2%;
+    top: 2%;
+}
+#baner2 ul
+{
+    list-style-type: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#baner2 ul:first-child
+{
+    margin-top: 10px;
+}
+#baner2 ul li
+{
+    display: inline-block;
+    position: relative;
+}
+#baner2 ul li a
+{
+    text-decoration: none;
+    display: block;
+    padding: 20px 40px;
+    font-size: 150%;
+    color: var(--kolor_przyciski);
+    background-color: #0D0D0D;
+}
+#baner2 ul li ul.dropdown li
+{
+    display: block;
+}
+#baner2 ul li ul.dropdown
+{
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+#baner2 ul li:hover ul.dropdown
+{
+    display: block;
+}
+#content
+{
+    clear: both;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 3% 0;
+    color: #F2F2F2;
+}
+#content img
+{
+    width: 80%;
+}
+#content h1
+{
+    font-size: 350%;
+}
+#content h3
+{
+    margin: 1% 0;
+    font-size: 150%;
+    font-weight: 400;
+}
+#content p
+{
+    margin-top: 1%;
+}
+#content ul
+{
+    list-style-type: none;
+}
+#content ul li::before
+{
+    content: '--- ';
+}
+#stopka
+{
+    width: 100%;
+    height: 60px;
+    background-color: var(--kolor_glowny);
+}
+#stopka p
+{
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 130%;
+    font-style: italic;
+    font-weight: 500;
+    color: #F2F2F2;
+}
+#content h3, h2
+{
+    margin: 3% 0;
+}
+#content h3
+{
+    color: var(--kolor_przyciski);
+}
+.linki
+{
+    text-decoration: none;
+    color: var(--kolor_przyciski);
+    font-weight: bold;
+    font-size: 150%;
+    margin: 0 1em;
+}
+.linki:hover
+{
+    /*color: #F2F2F2;*/
+    color: #32cbfd;
+}
+form
+{
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2% 0;
+    font-size: 110%;
+}
+form select, form input[type="date"], form input[type="number"], form input[type="text"]
+{
+    width: 50%;
+    height: 40px;
+    font-size: 110%;
+    border: none;
+    outline: none;
+    padding: 4px;
+    cursor: pointer;
+    background-color: #0D0D0D;
+    color: var(--kolor_przyciski);
+    border-radius: 3%;
+}
+#content form a
+{
+    text-decoration: none;
+    color: var(--kolor_przyciski);
+    font-weight: bold;
+    position: relative;
+    left: 15%;
+}
+#content form a:hover
+{
+    text-decoration: underline;
+    color: #0D0D0D;
+}
+input[type="submit"]
+{
+    border: none;
+    border-radius: 2%;
+    outline: none;
+    width: 50%;
+    height: 50px;
+    margin-top: 3em;
+    cursor: pointer;
+    font-size: 150%;
+    background-color: var(--kolor_glowny);
+    font-weight: bold;
+    color: #F2F2F2;
+}
+input[type="submit"]:hover
+{
+    font-style: italic;
+    color: #0D0D0D;
+    background-color: var(--kolor_przyciski);
+}
+b, th
+{
+    color: var(--kolor_glowny);
+    /*color: #d2003d;*/
+}
+table, td, th
+{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 1em;
+}
+table
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 2em 0;
+}
+#wylosowany
+{
+    background-color: var(--kolor_glowny);
+    color: #F2F2F2;
+    font-weight: bold;
+}
+.gotop
+{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    background-color: var(--kolor_glowny);
+    color: #F7F7F7;
+    font-size: 200%;
+    transform: rotate(-90deg);
+    border-radius: 100%;
+}
+.gotop:hover
+{
+    color: #0D0D0D;
+}
+#listaPojazdow tr:hover
+{
+    background-color: #0D0D0D;
+    color: var(--kolor_glowny);
+}

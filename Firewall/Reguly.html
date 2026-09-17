@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="Zdjecia/Logo.png">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <title>Firewall - Reguły</title>
+</head>
+<body>
+    <h1>Firewall na Serwerze Windows</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Reguly.html">Reguły</a></li>
+            <!--<li><a href="Polaczenia.html">Połączenia</a></li>-->
+            <li><a href="IPSec.html">IPSec</a></li>
+            <li><a href="Informacje.html">Informacje</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Reguły w Zaporze Sieciowej</h1>
+        <p>Reguła to prostym językiem mówiąc jest zbiorem pewnych postępowań, z którymi ona współpracuje przy sprawdzaniu danego pakietu w tym przypadku.</p>
+        <p>W Firewallu to właśnie reguły definiują nam, czy dany pakiet zostanie przepuszczony, czy zablokowany -> A więc stanowią one główne działanie Zapory Sieciowej.</p>
+        <p>Warto podkreślić, że reguły są mocno powiązane z <b><i>połączeniami przychodzącymi i wychodzącymi</i></b> (co widać na poniższym zdjęciu na lewo).
+        <ul>
+            <li><b><i>Połączenia Przychodzące </i></b>to połączenia, które chcą nawiązać połączenie z naszym komputerem z <b><u>poza tego komputera.</u></b> Możemy zaliczyć do nich np. protokół SSH.</li>
+            <li><b><i>Połączenia Wychodzące </i></b>to połączenia, które komputer chce nawiązać z innym urządzeniem z jakiejkolwiek sieci. Możemy zaliczyć do nich np. Blokadę Programów chociażby Przeglądarek Internetowych.</li>
+        </ul></p>
+        <img src="Zdjecia/Reguly.png" alt="" style="margin-left: 20%;">
+        <p>Powyżej możemy zauważyć okno z ustawieniami reguły. A jakich typów reguły możemy tworzyć?
+            <ul>
+                <li><b><i>Programu -</i></b> Dopuszczają przesyłanie pakietów przez wybrany program, identyfikowany przez ścieżkę dostępu i plik startowy.</li>
+                <li><b><i>Portu -</i></b> Dopuszczają przesyłanie pakietów za pośrednictwem określonego numeru portu albo ich zakresu w protokole TCP lub UDP.</li>
+                <li><b><i>Predefiniowane -</i></b> Pozwalają aktywować gotowe grupy reguł zezwalające wybranym funkcjom systemu na dostęp do sieci np. udostępnianie plików, drukarki.</li>
+                <li><b><i>Niestandardowe -</i></b> Reguły, których nie utworzymy z użyciem reguł innych typów (Takie połączenie powyższych opcji w jedno).</li>
+            </ul>
+        </p>
+        <p>Poniżej znajdziecie przykłady, jak ustawić regułę, która będzie blokować dostępu do programu, zaś druga zablokuje dany port.</p>
+        <h1>Reguła blokująca program</h1>
+        <h2>1. Wybieramy rodzaj reguły. W tym wypadku wybieramy <b><i>Program.</i></b></h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_01.png" alt="">
+        <h2>2. Wyszukujemy ścieżki do programu, który chcemy zablokować. Jak widać, możemy także wszystkie programy zablokować.</h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_02.png" alt="">
+        <h2>3. Tutaj zaznaczamy, czy chcemy zezwolić na połączenie, czy zablokować je. My oczywiście robimy to drugie.</h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_03.png" alt="">
+        <h2>4. W tym kroku zaznaczamy, w jakich profilach ta reguła ma obowiązywać.</h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_04.png" alt="">
+        <h2>5. Pozostaje nam jeszcze nazwać tą regułę i ewentualnie dodać opis. I w sumie to koniec.</h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_05.png" alt="">
+        <h2>6. Jak widzimy, reguła działa i nie zezwala na połączenie w IE, zaś w Edge'u już tak.</h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_06.png" alt="">
+        <h2>7. Co do portów, to robimy dokładnie tak samo z tą różnicą, że w 1 kroku zaznaczamy opcję <b><i>Port,</i></b> a później wybieramy port lub ich zakres, na których chcemy ustawić regułę.</h2>
+        <img id="screen" src="Zdjecia/Reguly/Program_07.png" alt="">
+        <p>Warto dodać, że dla każdej reguły możemy skonfigurować, który <b><u>komputer, bądź użytkownik</u></b> będzie korzystać z tej ustalonej reguły. Czasami jest to przydatne...</p>
+        <p>Jak widzimy, tworzenie reguł nie jest trudne, jednak trzeba to znać, gdyż każdy administrator powinien posiadać zaporę we własnej sieci, a wiemy, że czasami przez zaporę nie chce coś nam pingować itp, 
+            a w prawdziwej sieci <b><u>nie wyłączymy zapory,</u></b> aby działało. Tak więc ustawiamy do takich celów reguły, które pozwolą jednym na wejście, zaś innym na wyjście.</p>
+    </div>
+    <footer>Firewall &copy 2022 Wszelkie Prawa Zastrzeżone</footer>
+</body>
+</html>

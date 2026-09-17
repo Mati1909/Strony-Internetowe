@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="Zdjecia/favicon.png" type="image/x-icon">
+    <title>Przygotowanie do egzaminu INF.03 - HTML</title>
+    <style>
+        b, h2
+        {
+            color: #E68C02;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #E68C02;
+            font-weight: bold;
+        }
+        a:hover
+        {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="baner">
+            <h1>HTML</h1>
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+            <div id="menu-links">
+                <a href="index.html">Strona Główna</a>
+                <a id="html" href="HTML.html">HTML</a>
+                <a id="css" href="CSS.html">CSS</a>
+                <a id="javaScript" href="JS.html">Java Script</a>
+                <a id="php" href="PHP.html">PHP</a>
+                <a id="sql" href="SQL.html">SQL</a>
+                <a href="Informacje.html">Informacje</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="content">
+            <img src="Zdjecia/HTML.jpg">
+            <div id="links" class="html">
+                <a href="#szkieletStrony">Szkielet strony</a>
+                <a href="#znacznikiSekcji">Znaczniki sekcji</a>
+                <a href="#naglowki">Nagłówki</a>
+                <a href="#obrazy">Obrazy</a>
+                <a href="#akapity">Akapity</a>
+                <a href="#formularz">Formularz</a>
+                <a href="#tabelki">Tabelki</a>
+                <a href="#listy">Listy</a>
+            </div>
+            <p>Język HTML jest podstawą do działania witryny. Ponieważ to tutaj zapisujemy wszelką treść strony, podłączamy style czy skrypty. <br>
+            Obecną wersją HTML'a jest wersja 5 i na ten moment nie wygląda, abyśmy dostali nowszą.</p>
+            <!-- Szkielet Strony -->
+            <div class="chapter" id="szkieletStrony">
+                <h2>Szkielet strony</h2>
+                <p>Każda strona napisana w HTML'u musi składać się z:</p>
+                <ul>
+                    <li><b>&lt;!DOCTYPE html&gt;</b> - Informuje o użytym standardzie HTML5 na stronie</li>
+                    <li><b>&lt;html lang="pl"&gt;</b> i <b>&lt;/html&gt;</b> - Cały kod zapisany między tymi znacznikami, przy czym w HTML5 podany jest też pierwotny język, który używany jest na stronie</li>
+                    <li><b>&lt;head&gt;</b> i <b>&lt;/head&gt;</b> - Nagłówek strony, możemy interpretować jako karta przeglądarki. Między nimi znajdują się informacje, które dotyczą np. stylu css, kodowania znaków (np. &lt;meta charset="UTF-8"&gt;), favicona, różnych słów kluczowych, opisu strony czy tytuł strony itd.</li>
+                    <li><b>&lt;body&gt;</b> i <b>&lt;/body&gt;</b> - Ciało strony, to tutaj znajduje się cała treść, widoczna dla użytkownika oraz osadzone są wszelkie skrypty</li>
+                </ul>
+                <img src="Zdjecia/HTML/Struktura.png" alt="">
+            </div>
+            <!-- Znaczniki sekcji -->
+            <div class="chapter" id="znacznikiSekcji">
+                <h2>Znaczniki sekcji</h2>
+                <p>Powszechnie znane jako bloki, czy sekcje to nierozłączny element każdej strony. Dzięki nim możemy nadawać wygląd poszczególnym częściom strony, oddzielać jedne treści od drugich, czy formatować w inny sposób. Kiedyś strony budowano na strukturze tabelki, jednak dzisiaj mamy bloki: <b><i>div</i></b> lub nowsze z HTML5 takie, jak:</p>
+                <ul>
+                    <li><b>header</b> – Nagłówek strony, baner. Zwykle zapisany jest tam tytuł strony, czyli np. nazwa firmy</li>
+                    <li><b>nav</b> – Nawigacja, zawiera wszelkie odnośniki do poszczególnych stron</li>
+                    <li><b>main</b> – Główna zawartość strony, prościej: treść strony</li>
+                    <li><b>footer</b> – Stopka, gdzie zapisane są informacje dot. Np. autorów, własności (&copy), danych kontaktowych itd.</li>
+                    <li><b>Article</b> – Jakiś artykuł na stronie</li>
+                    <li><b>Aside</b> – Pewna część strony, np. na reklamy</li>
+                </ul>
+                <p>Zarówno przy tych nowych, jak i starszych warto pamiętać, że szczególnie przy div'ach, w celu stylizacji/odróżnienia od siebie nadajemy im:</p>
+                <ul>
+                    <li><b>id</b> – Identyfikator, który powinien występować <b><u>jednorazowo</u></b> na stronie LUB</li>
+                    <li><b>class</b> – Także pewien identyfikator, który może występować <b><u>wielokrotnie</u></b> na stronie</li>
+                </ul>
+                <p><b><i>W kwestii egzaminu:</i></b> Rzadko zdarza się, że musimy używać specyficznie znaczników z HTML5, gdyż <b><u>znacznikami sekcji są również bloki div.</u></b> Warto jednak pamiętać, że standard 5 wprowadza pewne nowości, bo nigdy nie wiadomo, co egzamin będzie od nas wymagał.</p>
+                <img src="Zdjecia/HTML/Sekcje.png" alt="">
+            </div>
+            <!-- Nagłówki -->
+            <div class="chapter" id="naglowki">
+                <h2>Nagłówki</h2>
+                <p>Nagłówki zwykle służą do zatytułowania pewnej części informacji na stronie. Stopni nagłówków jest 6, od <b><i>h1</i></b> do <b><i>h6</i></b>. Zwykle h1 służy do tytułowania części strony, h2 to taki podtytuł, h3 podtytuł podtytułu itd. Zwykle używa się tych trzech pierwszych stopni, ale nie jest tak zawsze. Domyślnie, nagłówek bez żadnych formatowań ma pogrubioną czcionkę, marginesy zewnętrzne oraz jest napisany w zależności od stopnia, większą bądź mniejszą czcionką.</p>
+                <img src="Zdjecia/HTML/Naglowki.png" alt="">
+            </div>
+             <!-- Obrazy -->
+             <div class="chapter" id="obrazy">
+                <h2>Obrazy</h2>
+                <p>Znacznik <b>&lt;img&gt;</b>: Element liniowy, pozwalający na wstawienie obrazów. Obecnie ciężko znaleźć egzamin, na którym nie ma do wstawienia obrazu. Przyjmuje domyślnie 2 właściwości:</p>
+                <ul>
+                    <li><b>src</b> – Źródło do pliku</li>
+                    <li><b>alt</b> – Tekst alternatywny w przypadku, gdy obraz podany w src nie może być wyświetlony z powodu braku jego, czy nie działania</li>
+                </ul>
+                <img src="Zdjecia/HTML/Obrazek.png" alt="">
+            </div>
+             <!-- Akapity -->
+             <div class="chapter" id="akapity">
+                <h2>Akapity</h2>
+                <p>Znacznik <b>&lt;p&gt;</b> i <b>&lt;/p&gt;</b> - Element blokowy, pozwalający na wstawianie tekstu pisanego. Zazwyczaj jakikolwiek tekst, który nie jest tytułem pisany jest pomiędzy tymi znacznikami. <u>Bardzo często występuje na egzaminie.</u></p>
+                <img src="Zdjecia/HTML/Akapity.png" alt="">
+            </div>
+             <!-- Formularz -->
+             <div class="chapter" id="formularz">
+                <h2>Formularz</h2>
+                <p>Znacznik <b>&lt;form&gt;</b> i <b>&lt;/form&gt;</b> - Umożliwia stworzenie formularzu na stronie. Formularze zazwyczaj obsługiwane są przez język <a href="PHP.html">PHP</a> (szczególnie na egzaminie), rzadko przez JS. Przyjmuje on 2 bardzo ważne właściwości:</p>
+                <ul>
+                    <li><b>action</b> – Co formularz ma zrobić po naciśnięciu przycisku kończącego formularz (submit). Zwykle jest to zewnętrzny plik, który pobiera dane z inputów w formularzu. Często na egzaminie trzeba to robić na tej samej stronie (co jest niepraktyczne), ale sposób na to znajdziesz w sekcji PHP</li>
+                    <li><b>method</b> – Metoda przesyłania danych. Musi być, gdyż w skrypcie należy jawnie wskazać, jakiej tzw. tablicy superglobalnej użyć do pobrania konkretnych danych (więcej w PHP)</li>
+                </ul>
+                <p>Pomiędzy znacznikami, muszą znajdować się tzw. <b><i>inputy</i></b>, czyli znacznik dający możliwość wstawienia danych. Jest on elementem liniowym i przyjmuje sporo rodzajów. Najważniejsze z nich to:</p>
+                <ul>
+                    <li><b>text</b> – Podstawowy typ umożliwiający wpisanie tekstu</li>
+                    <li><b>number</b> – Typ liczbowy, całkowity</li>
+                    <li><b>radio</b> – Pole jednokrotnego wyboru. Aby działało prawidłowo, każdy z nich musi mieć taki sam <b><i>name</i></b></li>
+                    <li><b>checkbox</b> – Pole wielokrotnego wyboru, obsługa w PHP jest cięższa, niż radio, ale nadal możliwa</li>
+                    <li><b>date</b> – Pole do wstawiania daty roku, miesiąca i dnia</li>
+                    <li><b>tel</b> – Pole do wstawiania numeru telefonu</li>
+                    <li><b>email</b> – Pole do wstawiania adresu mailowego. Można powiedzieć, że ulepszenie typu tekstowego, gdyż sprawdza obecność znaku zachęty (@) oraz czy jest podana domena</li>
+                    <li><b>button</b> – Zwykły przycisk. Zwykle używa się, gdy po kliknięciu ma się wywołać skrypt JS (więcej w sekcji JS)</li>
+                    <li><b>reset</b> – Czyści zawartość formularza, wszystkie pola do podawania danych przyjmują wartość domyślną</li>
+                    <li><b>submit</b> – Przycisk, kończący formularz. </li>
+                </ul>
+                <p>Oprócz tych wymienionych jest wiele innych, jak np. range, color itd. lecz więcej o nich można poczytać na <a href="https://www.w3schools.com/html/html_form_input_types.asp" target="_blank">tej stronie.</a></p>
+                <p>Poza inputami, mamy także pola <b>select</b>, które służą do wyboru opcji z listy. Każde pole select posiada znacznik <b>&lt;option&gt;</b> <b>&lt;/option&gt;</b>, który jest opcją tej listy.</p>
+                <p>Pola do wstawiania danych posiadają pewne ważne właściwości:</p>
+                <ul>
+                    <li><b>name</b> – Nazwa pola, poprzez które skrypt PHP pobiera dane</li>
+                    <li><b>id</b> – Pole, dające możliwość pobrania danych poprzez skrypt JS bądź do stylizacji w CSS</li>
+                    <li><b>placeholder</b> – Tekst wyświetlający się domyślnie, który daje użytkownikowi informację na temat tego, jak ma wpisać coś, bądź co należy tu wpisać. Znika on w momencie wpisywania danych</li>
+                    <li><b>value</b> – Obecny w typach <b>radio</b>, <b>checkbox</b> oraz <b>option</b>: Wartość danego pola, która będzie przesyłana do skryptu. W 2 pierwszych musi być, aby prawidłowo były obsługiwane dane, w tym ostatnim w przypadku nie podania danych – Wartość value znajduje się pomiędzy znacznikami <b>&lt;option&gt;</b> <b>&lt;/option&gt;</b></li>
+                </ul>
+                <img src="Zdjecia/HTML/Formularz.png" alt="">
+            </div>
+             <!-- Tabelki -->
+             <div class="chapter" id="tabelki">
+                <h2>Tabelki</h2>
+                <p>Umożliwiają one prezentację pewnych danych, czasem wyciągniętych z bazy, czasem do łatwego zestawienia ze sobą. Mieści się między znacznikami <b>&lt;table&gt;</b> <b>&lt;/table&gt;</b>, każdy wiersz to <b>&lt;tr&gt; &lt;/tr&gt;</b>, a komórka to <b>&lt;td&gt; &lt;/td&gt;</b>. Jest jeszcze specjalna, <b><u>komórka nagłówkowa</u></b>, która zwykle opisuje daną kolumnę danych, mieści się między znacznikami <b>&lt;th&gt; &lt;/th&gt;</b>. Domyślnie, nie ma ona obramowania, a komórki są oddalone od siebie. Na egzaminie zwykle formatowanie tabel odbywa się poprzez styl w CSS</p>
+                <img src="Zdjecia/HTML/Tabelki.png" alt="">
+            </div>
+             <!-- Listy -->
+             <div class="chapter" id="listy">
+                <h2>Listy</h2>
+                <p>Listy są często elementem nawigacji, bądź wymienienia pewnych zbiorów danych. Są dwa rodzaje takich list:</p>
+                <ul>
+                    <li><b>ol</b> – Lista numerowana tzw. <b>uporządkowana</b></li>
+                    <li><b>ul</b> – Lista punktowana tzw. <b>nieuporządkowana</b></li>
+                </ul>
+                <p>Każda z tych list posiada znaczniki <b>&lt;li&gt; &lt;/li&gt;</b>, które są niczym innym, jak elementem listy, pomiędzy którymi zawiera się treść konkretnego punktu</p>
+                <p>Ponadto, każda z list może mieć różnej ilości zagnieżdżenia, zwykle umiejscowione są po zamknięciu elementu listy, pod którym ma się znajdować zagnieżdżenie</p>
+                <img src="Zdjecia/HTML/Listy.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="stopka">
+            <h5>Przygotowanie do egzaminu INF.03 &copy; 2023</h5>
+        </div>
+    </footer>
+    <a href="#" class="gotop">&roarr;</a>
+</body>
+</html>

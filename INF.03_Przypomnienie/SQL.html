@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="Zdjecia/favicon.png" type="image/x-icon">
+    <title>Przygotowanie do egzaminu INF.03 - PHP</title>
+    <style>
+        b, h2
+        {
+            color: #00E626;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #00E626;
+            font-weight: bold;
+        }
+        a:hover
+        {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="baner">
+            <h1>PHP</h1>
+        </div>
+    </header>
+    <nav>
+        <div id="menu">
+            <div id="menu-links">
+                <a href="index.html">Strona Główna</a>
+                <a id="html" href="HTML.html">HTML</a>
+                <a id="css" href="CSS.html">CSS</a>
+                <a id="javaScript" href="JS.html">Java Script</a>
+                <a id="php" href="PHP.html">PHP</a>
+                <a id="sql" href="SQL.html">SQL</a>
+                <a href="Informacje.html">Informacje</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="content">
+            <img src="Zdjecia/SQL.jpeg">
+            <div id="links" class="sql">
+                <a href="#podstawoweInformacje">Podstawowe informacje</a>
+                <a href="#DDL">DDL</a>
+                <a href="#DML">DML</a>
+                <a href="#DQL">DQL</a>
+                <a href="#DCL">DCL</a>
+                <a href="#funkcjeAgregujace">Funkcje agregujące</a>
+            </div>
+            <div id="links" class="sql">
+                <a href="#sortowanie">Sortowanie Danych</a>
+                <a href="#grupowanie">Grupowanie danych</a>
+                <a href="#warunkowanie">Rodzaje warunkowania</a>
+                <a href="#funkcjeTekstowe">Funkcje tekstowe</a>
+                <a href="#funkcjeMatematyczne">Funkcje matematyczne</a>
+            </div>
+            <p>Język SQL jest językiem zapytań do bazy danych. Pozwala na zarządzanie danymi w tej bazie poprzez dodawanie, usuwanie, aktualizację, wybieranie danych struktur.</p>
+            <!-- Podstawowe informacje -->
+            <div class="chapter" id="podstawoweInformacje">
+                <h2>Podstawowe informacje</h2>
+                <p>Baza danych jest <b><u>uporządkowanym zbiorem informacji</u></b> zazwyczaj w formie odpowiednich tabel połączonych ze sobą <b>relacją</b>.</p>
+                <p>Najpopularniejszym modelem baz danych jest <b><i>model relacyjny</i></b>, gdzie tabele połączone są ze sobą za pomocą kluczy <b>podstawowych</b> i <b>obcych</b>.</p>
+                <p><b>Klucz podstawowy</b> musi być <b><u>unikalny i jasny</u></b></p>
+                <p><b>Klucz obcy</b> jest <u>referencją</u> na <b>klucz podstawowy</b>. Pozwala na połączenie tabel ze sobą i wspólne łączenie danych.</p>
+                <p>Systemy bazodanowe to np. <a href="https://www.mysql.com/" target="_blank">MySQL</a>, <a href="https://www.oracle.com/pl/" target="_blank">Oracle</a>, <a href="https://www.microsoft.com/pl-pl/sql-server/sql-server-downloads" target="_blank">MSSQL</a> itd.</p>
+                <p>Po więcej informacji dotyczących teoretycznych baz danych, odsyłam pod <a href="https://pl.wikipedia.org/wiki/Baza_danych" target="_blank">ten link</a>. My zaś, przyjrzymy się praktycznej części obsługi zapytań.</p>
+                <img src="Zdjecia/SQL/MySQL.png" alt="">
+            </div>
+            <!-- DDL -->
+            <div class="chapter" id="DDL">
+                <h2>DDL</h2>
+                <p><b>Data Definition Language</b>. Język definicji danych, ogólna część służąca do tworzenia struktury baz, tabel, widoków.</p>
+                <ul>
+                    <li><b>CREATE</b> – Tworzenie struktury</li>
+                    <li><b>ALTER</b> – Modyfikacja struktury</li>
+                    <li><b>DROP</b> – Usuwanie struktury</li>
+                    <li><b>TRUNCATE</b> – Czyszczenie tabeli z danych poprzez usunięcie tabeli i jej ponowne utworzenie</li>
+                </ul>
+                <img src="Zdjecia/SQL/DDL.png" alt="">
+            </div>
+            <!-- DML -->
+            <div class="chapter" id="DML">
+                <h2>DML</h2>
+                <p><b>Data Manipulation Language</b>. Język modyfikacji danych. Umożliwia zarządzanie danymi zapisywanymi w tabelach, widokach.</p>
+                <ul>
+                    <li><b>INSERT</b> – Wstawianie danych do tabeli</li>
+                    <li><b>UPDATE</b> – Aktualizacja danych w tabeli (często powiązane z warunkiem WHERE)</li>
+                    <li><b>DELETE</b> – Usuwanie danych z tabeli (często powiązane z warunkiem WHERE)</li>
+                </ul>
+                <img src="Zdjecia/SQL/DML.png" alt="">
+            </div>
+            <!-- DQL -->
+            <div class="chapter" id="DQL">
+                <h2>DQL</h2>
+                <p><b>Data Query Language</b>. Język zapytań. Związany głównie z słowem <b>SELECT</b>, który pozwala na wybieranie danych z konkretnych tabel.</p>
+                <img src="Zdjecia/SQL/DQL.png" alt="">
+            </div>
+            <!-- DCL -->
+            <div class="chapter" id="DCL">
+                <h2>DCL</h2>
+                <p><b>Data Control Language</b>. Język kontroli danych, czyli powiązany z obsługą użytkowników i zarządzaniu ich uprawnieniami.</p>
+                <ul>
+                    <li><b>GRANT</b> – Nadawanie uprawnień do baz, tabel dla użytkowników</li>
+                    <li><b>REVOKE</b> – Odbieranie uprawnień do baz, tabel danym użytkownikom</li>
+                </ul>
+                <p>Oczywiście z tą częścią wiążą się słowa <b>CREATE</b> i <b>DROP USER</b>, lecz myślę, że jest to logiczne</p>
+                <img src="Zdjecia/SQL/DCL.png" alt="">
+            </div>
+            <!-- Funkcje Agregujące -->
+            <div class="chapter" id="funkcjeAgregujace">
+                <h2>Funkcje Agregujące</h2>
+                <p>Funkcje agregujące są funkcjami, które działają w zależny sposób na danych.</p>
+                <ul>
+                    <li><b>MIN</b> – Zwraca minimalną wartość w kolumnie</li>
+                    <li><b>MAX</b> – Zwraca maksymalną wartość w kolumnie</li>
+                    <li><b>COUNT</b> – Zwraca ilość rekordów</li>
+                    <li><b>SUM</b> – Sumuje wartości w kolumnie</li>
+                    <li><b>AVG</b> – Oblicza średnią wartość z danych w kolumnie</li>
+                </ul>
+                <p>Z tymi funkcjami, wiążą się słowa <b>GROUP BY</b> oraz <b>HAVING</b>, które omówione są niżej</p>
+                <img src="Zdjecia/SQL/Funkcje_Agregujace.png" alt="">
+            </div>
+            <!-- Sortowanie Danych -->
+            <div class="chapter" id="sortowanie">
+                <h2>Sortowanie Danych</h2>
+                <p>Do sortowania danych, możemy użyć słowa <b>ORDER BY</b>. <u>Domyślnie, sortowanie odbywa się od najmniejszej do największej wartości</u> (ASC), lecz aby zrobić odwrotnie, należy użyć słowa <b>DESC</b>.</p>
+                <p>Należy też <u>wskazać kolumnę</u>, po której mają się sortować dane poprzez jej <u>nazwę</u> LUB <u>odpowiedni indeks</u> (począwszy od 1)</p>
+                <img src="Zdjecia/SQL/Sortowanie.png" alt="">
+            </div>
+            <!-- Grupowanie Danych -->
+            <div class="chapter" id="grupowanie">
+                <h2>Grupowanie Danych</h2>
+                <p>Grupowanie danych dotyczy <u><b>głównie powyższych funkcji agregujących</b></u>. Wskazuje ono, po jakiej kolumnie te dane mają się grupować, gdyż bez podania tego słowa -> funkcje wykonają swoje działania na wszystkich rekordach (lub pierwszej tylko kolumnie)</p>
+                <img src="Zdjecia/SQL/Grupowanie.png" alt="">
+            </div>
+            <!-- Rodzaje warunkowania -->
+            <div class="chapter" id="warunkowanie">
+                <h2>Rodzaje warunkowania</h2>
+                <p>Często czy to w zapytaniach, czy to w aktualizacjach lub usuwaniach danych należy uszczegółowić, które dane dotyczy to zapytanie. Do tego służy słowo <b>WHERE</b>.</p>
+                <p>Natomiast <b>HAVING</b> jest takim samym słowem, co <b>WHERE</b>, lecz <b>HAVING</b> działa tylko na zgrupowanych już rekordach, np. kiedy chcemy wyświetlić konkretne średnie</p>
+                <img src="Zdjecia/SQL/Warunkowanie.png" alt="">
+            </div>
+            <!-- Funkcje tekstowe -->
+            <div class="chapter" id="funkcjeTekstowe">
+                <h2>Funkcje Tekstowe</h2>
+                <p>Funkcje tekstowe odpowiadają za manipulowaniem ciągu znaków.</p>
+                <ul>
+                    <li><b>LEFT</b> – Pobiera odpowiednią ilość znaków od lewej strony z podanego ciągu znaków</li>
+                    <li><b>CONCAT</b> – Łączy ze sobą podane ciągi znaków</li>
+                    <li><b>RIGHT</b> - Pobiera odpowiednią ilość znaków od prawej strony z podanego ciągu znaków</li>
+                </ul>
+                <img src="Zdjecia/SQL/Funkcje_Tekstowe.png" alt="">
+            </div>
+            <!-- Funkcje matematyczne -->
+            <div class="chapter" id="funkcjeMatematyczne">
+                <h2>Funkcje Matematyczne</h2>
+                <p>W kwestii funkcji matematycznych, najważniejszą z nich będzie <b>ROUND</b>, czyli zaokrąglanie do podanej liczby miejsc po przecinku.</p>
+                <p>Po więcej informacji warto <a href="https://www.w3schools.com/sql/sql_ref_sqlserver.asp" target="_blank">zobaczyć</a> taki artykuł</p>
+                <img src="Zdjecia/SQL/Funkcje_Matematyczne.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="stopka">
+            <h5>Przygotowanie do egzaminu INF.03 &copy; 2023</h5>
+        </div>
+    </footer>
+    <a href="#" class="gotop">&roarr;</a>
+</body>
+</html>
